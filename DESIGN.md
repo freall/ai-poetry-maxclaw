@@ -1,318 +1,367 @@
-# DESIGN.md — 诗意山河视觉与交互设计规范
+# 诗意山河 - 设计规范 (Design Specification)
 
-> 本文档定义了项目的所有设计标准，所有 UI 变更必须遵循本文档。
+> Design Language: Modern Chinese Classical · Gamified Learning · Mobile-First
 
 ---
 
 ## 1. Design Principles
 
-### 1.1 新宋式极简主义
-- 以**留白**为核心——大量留白传达文人气质，内容自然成为视觉焦点
-- **层次分明**：标题 > 诗词正文 > 翻译 > 注释，视觉权重递减
-- **克制用色**：主色不超过 3 种，加1-2 种点缀色
-- 装饰元素服务于内容，不喧宾夺主
+### 1.1 Core Philosophy
+- **国风现代化** — 保留中国古典美学（书法、水墨、金色点缀），用现代 UI 技法表达
+- **游戏化学习** — 每一个正确操作都有即时反馈，连击/徽章/成就让学习上瘾
+- **无摩擦交互** — 3岁到高三都能用，零学习成本
 
-### 1.2 移动优先
-- 所有设计从 375px 宽度开始，向大屏扩展
-- 触控优先：所有可点击元素 ≥ 44×44px
-- 拇指区交互（底部导航、滑动切换）
-- 内容密度在移动端更稀疏（减少阅读压力）
-
-### 1.3 性能即设计
-- 首屏加载 < 2s，LCP < 1.5s
-- 图片懒加载 + CDN 加速
-- 骨架屏替代 loading spinner
+### 1.2 Design Meta
+参考 Apple Human Interface + Figma Design Systems + Duolingo gamification
 
 ---
 
-## 2. Color System
+## 2. Color Palette
 
-### 2.1 核心色板（Design Tokens）
-```css
-:root {
-  /* 深色主题为主 */
-  --color-bg:         #0f0f23;   /* 玄色 - 主背景 */
-  --color-surface:    #1a1a2e;   /* 墨色 - 卡片背景 */
-  --color-surface-2: #16213e;   /* 青墨 - 次级表面 */
-  --color-border:     rgba(255,255,255,0.08);
-  --color-border-2:  rgba(255,255,255,0.15);
-
-  /* 文字 */
-  --color-text:       #f5f0e8;   /* 素纸白 */
-  --color-text-2:    #9ca3af;    /* 次级文字 */
-  --color-text-3:    #6b7280;   /* 占位符文字 */
-  --color-text-inv:  #0f0f23;   /* 反色文字 */
-
-  /* 点缀色 */
-  --color-gold:       #d4a843;   /* 古铜金 - 主强调色 */
-  --color-coral:      #e07a5f;   /* 胭脂 - 错误/警告 */
-  --color-jade:       #81b29a;   /* 青瓷 - 成功/进度 */
-  --color-ink:       #4a5568;    /* 淡墨 - 边框/分割线 */
-
-  /* 语义色 */
-  --color-primary:    #d4a843;
-  --color-success:    #4ade80;
-  --color-warning:    #fbbf24;
-  --color-error:      #f87171;
-  --color-info:      #60a5fa;
-
-  /* 渐变 */
-  --grad-gold:   linear-gradient(135deg, #d4a843, #f4d03f);
-  --grad-hero:   linear-gradient(135deg, #0f0f23 0%, #1a1a2e 50%, #16213e 100%);
-  --grad-card:   linear-gradient(180deg, rgba(255,255,255,0.04), transparent);
-
-  /* 透明度 */
-  --opacity-20: 0.2;
-  --opacity-50: 0.5;
-  --opacity-80: 0.8;
-}
+### 2.1 Primary Colors (玄色系统)
+```
+--ink-950:   #05050F   // 最深背景
+--ink-900:   #0A0A1A   // 深色背景
+--ink-800:   #0F0F23   // 主背景 (暗色)
+--ink-700:   #1A1A2E   // 卡片背景
+--ink-600:   #252540   // 悬浮卡片
+--ink-500:   #2E2E50   // 边框线
 ```
 
-### 2.2 Typography Scale
-```css
-:root {
-  /* 字体族 */
-  --font-display:  "Ma Shan Zheng", "Noto Serif SC", "STKaiti", serif;
-  --font-body:     "LXGW WenKai", "Noto Sans SC", system-ui, sans-serif;
-  --font-mono:     "JetBrains Mono", "Fira Code", monospace;
-
-  /* 字号 */
-  --text-xs:   0.75rem;   /* 12px - 注释 */
-  --text-sm:   0.875rem;  /* 14px - 次级文字 */
-  --text-base: 1rem;       /* 16px - 正文 */
-  --text-lg:   1.125rem;  /* 18px - 标题 */
-  --text-xl:   1.25rem;   /* 20px - 副标题 */
-  --text-2xl:  1.5rem;     /* 24px */
-  --text-3xl: 1.875rem;   /* 30px - 诗词标题 */
-  --text-4xl: 2.25rem;    /* 36px */
-  --text-5xl: 3rem;       /* 48px - 诗词大字 */
-  --text-6xl:  4rem;       /* 64px - 英雄标题 */
-
-  /* 行高 */
-  --leading-tight:  1.25;
-  --leading-normal: 1.6;
-  --leading-relaxed: 2;
-  --leading-poem:   2.2; /* 诗词正文行高 */
-}
+### 2.2 Accent Colors (金色系统)
+```
+--gold-500:  #D4A843   // 主金色 (品牌色)
+--gold-400:  #E8C06A   // 亮金色 (hover)
+--gold-300:  #F0D48A   // 浅金色 (文字)
+--gold-600:  #A8852E   // 深金色 (强调)
+--gold-gradient: linear-gradient(135deg, #D4A843 0%, #F0D48A 50%, #D4A843 100%)
 ```
 
-### 2.3 Spacing System
-```css
-:root {
-  --space-1:   4px;
-  --space-2:   8px;
-  --space-3:   12px;
-  --space-4:   16px;
-  --space-5:   20px;
-  --space-6:   24px;
-  --space-8:   32px;
-  --space-10:  40px;
-  --space-12:  48px;
-  --space-16:  64px;
-  --space-20:  80px;
-  --space-24:  96px;
-}
+### 2.3 Semantic Colors
+```
+--jade-500:  #4ADE80   // 正确/成功
+--rose-500:  #F87171   // 错误/警告
+--cyan-500:  #22D3EE   // 提示/信息
+--purple-500: #A78BFA  // 成就/奖励
+```
+
+### 2.4 Light Mode Overrides
+```
+--bg-primary:   #FAFAF8   // 米白背景
+--bg-secondary: #F5F0E8   // 暖白卡片
+--text-primary: #1C1C1E   // 深墨文字
+--text-secondary:#6E6E73  // 灰色辅助文字
 ```
 
 ---
 
-## 3. Component Design
+## 3. Typography
 
-### 3.1 Card（卡片）
+### 3.1 Font Stack
 ```css
-.poem-card {
-  background: var(--color-surface);
-  border: 1px solid var(--color-border);
-  border-radius: 16px;
-  padding: var(--space-4);
-  transition: transform 150ms ease, box-shadow 150ms ease;
-}
-.poem-card:hover {
-  transform: translateY(-2px);
-  box-shadow: 0 8px 32px rgba(212,168,67,0.1);
+/* 英文/UI文字 */
+font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+
+/* 诗词正文 — Ma Shan Zheng (Google Fonts) */
+font-family: 'Ma Shan Zheng', 'STKaiti', 'KaiTi', serif;
+
+/* 标题装饰 */
+font-family: 'Noto Serif SC', 'STHeiti', serif;
+```
+
+### 3.2 Type Scale
+```
+--text-xs:   0.75rem  / 12px  — 标签、徽章
+--text-sm:   0.875rem / 14px  — 辅助说明
+--text-base: 1rem     / 16px  — 正文
+--text-lg:   1.125rem / 18px  — 大正文
+--text-xl:   1.25rem  / 20px  — 小标题
+--text-2xl:  1.5rem   / 24px  — 章节标题
+--text-3xl:  1.875rem / 30px  — 页面标题
+--text-4xl:  2.25rem  / 36px  — 大标题
+--text-5xl:  3rem     / 48px  — 诗词大字
+--text-hero: 4rem     / 64px  — 封面诗词
+```
+
+### 3.3 Poem Display
+- 诗词正文: `text-4xl` ~ `text-5xl`，行高 `2.2`，字间距 `0.1em`
+- 译文: `text-base`，颜色 `text-secondary`
+- 注释: `text-sm`，左侧竖线装饰
+
+---
+
+## 4. Spacing System
+
+```css
+--space-1:  4px    --space-2:  8px    --space-3:  12px
+--space-4:  16px   --space-5:  20px   --space-6:  24px
+--space-8:  32px   --space-10: 40px   --space-12: 48px
+--space-16: 64px   --space-20: 80px   --space-24: 96px
+
+/* 页面内边距 */
+--page-padding:  clamp(16px, 4vw, 48px)
+--card-padding:  20px ~ 24px
+--section-gap:  32px ~ 48px
+```
+
+---
+
+## 5. Motion & Animation
+
+### 5.1 Core Principles
+- **Entrance**: fade + slide-up, 300-400ms, ease-out
+- **Exit**: fade + slide-down, 200ms, ease-in
+- **Micro-interactions**: 150-200ms, spring/bounce easing
+- **Page transitions**: 350ms, shared element transitions
+- **Quiz celebrations**: 600-1200ms, particle effects
+
+### 5.2 Animation Tokens
+```css
+--ease-bounce:   cubic-bezier(0.34, 1.56, 0.64, 1)   // 弹性
+--ease-smooth:   cubic-bezier(0.4, 0, 0.2, 1)         // 平滑
+--ease-out:      cubic-bezier(0, 0, 0.2, 1)            // 退出
+--duration-fast:   150ms
+--duration-base:  300ms
+--duration-slow:  500ms
+--duration-celebration: 1200ms
+```
+
+### 5.3 Gamification Animations
+- **Correct answer**: 绿色波纹扩散 + 数字 +100 向上飘动
+- **Wrong answer**: 红色左右摇晃 + 正确答案高亮
+- **连击 (Combo)**: 随 combo 数增长的粒子喷射
+- **徽章获得**: 全屏金光 + 徽章掉落动画
+- **随机诗词卡片**: 3D 翻书效果
+
+---
+
+## 6. Layout System
+
+### 6.1 Grid
+```css
+/* 移动端: 单列流 */
+grid-template-columns: 1fr
+
+/* 平板: 2列 */
+@media (min-width: 640px)
+  grid-template-columns: repeat(2, 1fr)
+
+/* 桌面: 3列+ */
+@media (min-width: 1024px)
+  grid-template-columns: repeat(3, 1fr)
+  sidebar: 280px
+```
+
+### 6.2 Page Structure
+
+**首页 (Home)**
+```
+┌─────────────────────────────┐
+│  Logo + 搜索框 + 用户头像  │  ← 顶部栏 56px
+├─────────────────────────────┤
+│  🎯 今日目标 / 连续天数    │  ← 状态卡片
+├─────────────────────────────┤
+│  📖 继续学习 (横向滚动)    │  ← 最近阅读
+├─────────────────────────────┤
+│  🌟 本周挑战 / 成就进度    │
+├─────────────────────────────┤
+│  🔥 推荐诗词 (卡片网格)    │
+├─────────────────────────────┤
+│  📚 分类浏览               │  ← 分类入口
+└─────────────────────────────┘
+```
+
+**诗词详情页 (Poem Detail)**
+```
+┌─────────────────────────────┐
+│ ← 返回   [上一首][下一首]  │  ← 顶部导航
+├─────────────────────────────┤
+│   [AI 意境图 / 历史名画]    │  ← 主图区 40vh
+│   [ Tab: 原文 | 译文 | 注释 | 背景 | 习题 ] │
+├─────────────────────────────┤
+│   诗词正文 (大字居中)       │
+│   作者: 王维  朝代: 唐      │  ← 作者信息条
+├─────────────────────────────┤
+│   译文区域 (可折叠)         │
+├─────────────────────────────┤
+│   注释区域 (可折叠)         │
+├─────────────────────────────┤
+│   相关诗词 (横向卡片)       │
+├─────────────────────────────┤
+│   练习题 (互动答题)         │
+└─────────────────────────────┘
+```
+
+**发现页 (Discover)**
+```
+┌─────────────────────────────┐
+│  🔍 搜索 / 热搜词          │
+├─────────────────────────────┤
+│  [全部] [唐诗] [宋词] [古文] [小学] [初中] [高中] │ ← 筛选标签
+├─────────────────────────────┤
+│  ⚡ 随机来一首              │  ← 快捷入口
+├─────────────────────────────┤
+│  📋 分类列表 (流式瀑布)    │
+│   ┌────┐ ┌────┐            │
+│   │  诗 │ │  词 │            │
+│   └────┘ └────┘            │
+└─────────────────────────────┘
+```
+
+**挑战页 (Challenge)**
+```
+┌─────────────────────────────┐
+│  ⏱️ 计时挑战 / 正确率      │
+│  [████████░░] 8/10         │
+├─────────────────────────────┤
+│  题目: 这句诗的意思是?     │
+│  选项 A / B / C / D        │
+│  ✓ 正确！+10 xp            │
+├─────────────────────────────┤
+│  🏆 本次获得: 徽章碎片 x3  │
+└─────────────────────────────┘
+```
+
+### 6.3 Mobile Gestures
+- **滑动翻页**: 诗词详情页支持上下/左右滑动翻页
+- **长按收藏**: 长按任意诗词卡片弹出菜单（收藏/分享/背诵）
+- **下拉刷新**: 发现页下拉刷新推荐内容
+- **双击点赞**: 双击诗词正文区域触发❤️动画
+
+---
+
+## 7. Component Library
+
+### 7.1 PoemCard
+- 状态: default / hover / active / completed / locked
+- 显示: 标题 + 作者 + 朝代 + 难度星标 + AI缩略图
+- 悬浮: 卡片微微上浮 + 金色边框光晕
+
+### 7.2 SwipeCard
+- TikTok/Douyin 全屏滑动体验
+- 向上滑动 → 下一首 + 3D翻页动画
+- 显示: 全屏背景图 + 诗词叠加 + 底部操作栏
+
+### 7.3 QuizCard
+- 选择题: A/B/C/D 大按钮，hover 放大
+- 正确: 绿色扩散 + ✓动画
+- 错误: 红色摇晃 + 显示正确答案
+- 连击条: combo x N 显示 + 进度条
+
+### 7.4 BadgeCard
+- 状态: locked / unlocked / new
+- 获得时: 全屏金光 + 徽章掉落
+- 显示: 图标 + 名称 + 进度
+
+### 7.5 ProgressRing
+- 圆形进度环，显示学习完成度
+- 中心显示数字/百分比
+- 动画: 顺时针填充
+
+### 7.6 AIImageCard
+- 16:9 或 4:3 比例
+- 左下: 诗词标题
+- 右下: 来源标签 (AI生成/历史名画/书法)
+- 悬浮: 放大预览 + 下载按钮
+
+---
+
+## 8. Gamification System
+
+### 8.1 XP & Level
+```javascript
+const XP_REWARDS = {
+  read_poem: 5,        // 阅读一首诗词
+  complete_quiz: 10,   // 完成一套练习
+  perfect_quiz: 25,    // 满分练习
+  streak_day: 15,      // 每日连续
+  first_try: 5,       // 首次答对
+  combo_3: 10,         // 3连击
+  combo_5: 25,         // 5连击
+  combo_10: 50,        // 10连击
 }
 ```
 
-### 3.2 Button（按钮）
-```css
-.btn-primary {
-  background: var(--grad-gold);
-  color: #0f0f23;
-  font-weight: 700;
-  padding: 12px 24px;
-  border-radius: 12px;
-  border: none;
-  cursor: pointer;
-  transition: transform 150ms, box-shadow 150ms;
-}
-.btn-primary:hover {
-  transform: scale(1.03);
-  box-shadow: 0 4px 20px rgba(212,168,67,0.3);
-}
-.btn-primary:active { transform: scale(0.98); }
-```
+### 8.2 Badges
+| 徽章 | 名称 | 条件 |
+|------|------|------|
+| 🌱 | 诗路新手 | 完成第一首诗词 |
+| 📚 | 诗书饱读 | 学习50首诗词 |
+| 🎯 | 百发百中 | 连续答对10题 |
+| 🔥 | 一日千里 | 一天学习20首 |
+| ⭐ | 诗仙 | 集齐所有分类徽章 |
+| 🏆 | 诗圣 | 完成所有诗词 |
+| 💎 | 满分大师 | 10次满分答题 |
+| 🌙 | 夜读人 | 深夜学习（22:00后） |
+| 🎰 | 幸运诗人 | 随机抽到李白诗词 |
 
-### 3.3 诗词正文排版
-```css
-.poem-content {
-  font-family: var(--font-display);
-  font-size: var(--text-3xl);
-  line-height: var(--leading-poem);
-  text-align: center;
-  color: var(--color-text);
-  /* 竖排支持（未来可选）*/
-  writing-mode: horizontal-tb; /* 暂时用横排 */
-  letter-spacing: 0.1em; /* 诗词正文加大字间距 */
-}
-```
+### 8.3 Streak System
+- 连续学习 N 天: 奖励翻倍
+- 断签提醒: 推送通知
+- 补签卡: 可用 XP 购买
 
-### 3.4 底部导航（移动端）
-```css
-.bottom-nav {
-  position: fixed;
-  bottom: 0;
-  left: 0;
-  right: 0;
-  height: 64px;
-  background: rgba(15,15,35,0.95);
-  backdrop-filter: blur(20px);
-  border-top: 1px solid var(--color-border);
-  display: flex;
-  justify-content: space-around;
-  align-items: center;
-  z-index: 100;
-  padding-bottom: env(safe-area-inset-bottom);
+---
+
+## 9. Data Architecture
+
+### 9.1 Content Schema
+```typescript
+interface Poem {
+  id: string
+  title: string
+  author: string
+  authorId: string
+  dynasty: 'Tang' | 'Song' | 'Yuan' | 'Ming' | 'Qing' | 'Modern' | 'Pre-Qin' | 'Han' | 'Wei' | 'Jin'
+  category: 'shi' | 'ci' | 'prose' | 'yuefu' | 'ci_excerpt'
+  difficulty: 1 | 2 | 3 | 4 | 5
+  content: string        // 原文
+  translation: string    // 全文翻译
+  annotation: string     // 注释
+  background: string     // 创作背景
+  audioUrl?: string      // 朗诵音频
+
+  // 多媒体
+  aiImagePrompt: string  // AI图片生成Prompt
+  aiImageUrl?: string    // AI生成图
+  historicalPaintings: { url: string; title: string; artist: string; year: string }[]
+  calligraphyUrls: { url: string; title: string; artist: string }[]
+
+  // 关联
+  relatedPoemIds: string[]
+  tags: string[]
+  theme: string[]        // 主题标签: ['思乡', '山水', '爱国']
+
+  // 教学
+  schoolLevel?: 'primary' | 'middle' | 'high' | 'exam'
+  schoolTextbook?: string
+  memo?: string          // 背诵提示
+
+  quizIds: string[]
 }
 ```
 
 ---
 
-## 4. Animation Specification
-
-### 4.1 全局动画
-```css
-:root {
-  --ease-out: cubic-bezier(0.16, 1, 0.3, 1);     /* 自然缓出 */
-  --ease-spring: cubic-bezier(0.34, 1.56, 0.64, 1); /* 弹性 */
-  --ease-in-out: cubic-bezier(0.65, 0, 0.35, 1);
-  --duration-fast: 150ms;
-  --duration-normal: 250ms;
-  --duration-slow: 400ms;
-}
-```
-
-### 4.2 页面过渡
-```css
-/* 前进：新页从右滑入 */
-.page-enter { animation: slideInRight 250ms var(--ease-out); }
-@keyframes slideInRight {
-  from { transform: translateX(100%); opacity: 0; }
-  to   { transform: translateX(0); opacity: 1; }
-}
-
-/* 后退：新页从左滑入 */
-.page-back { animation: slideInLeft 250ms var(--ease-out); }
-```
-
-### 4.3 成功动画（答题）
-```css
-/* 礼花效果：60个彩色粒子，2.5s 散落 */
-@keyframes confetti {
-  0%   { transform: translateY(-10vh) rotate(0deg); opacity: 1; }
-  100% { transform: translateY(100vh) rotate(720deg); opacity: 0; }
-}
-
-/* 弹跳 */
-@keyframes bounce {
-  0%,100% { transform: scale(1); }
-  50%     { transform: scale(1.15); }
-}
-```
-
-### 4.4 刷屏交互（移动端）
-```css
-.swipe-card {
-  transition: transform 100ms var(--ease-out);
-  touch-action: pan-y;
-}
-/* 滑动方向检测：滑动 30% 屏幕宽度触发切换 */
-```
-
----
-
-## 5. Responsive Breakpoints
+## 10. Responsive Breakpoints
 
 ```css
 /* Mobile First */
-.container { max-width: 100%; padding: 0 var(--space-4); }
+--mobile:   max-width: 480px
+--phablet:  min-width: 481px
+--tablet:   min-width: 768px
+--desktop:  min-width: 1024px
+--wide:     min-width: 1280px
+--ultra:    min-width: 1536px
 
-@media (min-width: 640px) {
-  .container { padding: 0 var(--space-6); }
-  /* 诗词详情：左侧正文 + 右侧信息 */
-  .poem-detail-layout { grid-template-columns: 2fr 1fr; }
-}
-
-@media (min-width: 1024px) {
-  .container { max-width: 1200px; margin: 0 auto; }
-  /* 桌面：左侧边栏导航 */
-  .app-layout { display: grid; grid-template-columns: 240px 1fr; }
-}
+/* Touch Targets: min 44px */
 ```
 
 ---
 
-## 6. Accessibility
+## 11. Accessibility
 
-- 所有颜色对比度 ≥ 4.5:1（WCAG AA）
-- 所有图片有 alt 文本
-- 键盘可完全导航（Tab / Enter / Escape）
-- Focus 状态明显可见：`outline: 2px solid var(--color-gold)`
-- ARIA labels 用于图标按钮
-- 支持 `prefers-reduced-motion`
-
----
-
-## 7. Icon Guidelines
-
-- 使用 **Lucide React** 图标库（一致 stroke width: 1.5）
-- 自定义图标（印章、传统元素）使用 SVG 内联
-- 图标颜色跟随文字色（`currentColor`）
-- 尺寸：16/20/24/32px
-
----
-
-## 8. Image Strategy
-
-### 8.1 AI 生成配图
-- 比例：16:9 横向（适合诗词意境展示）
-- 风格：传统水墨 + 淡彩（符合诗词氛围）
-- 存储：Supabase Storage `poetry-images/ai/{poem_id}.png`
-
-### 8.2 历史名画
-- 来源：故宫博物院公开资源、大英博物馆开放文物
-- 优先使用无版权或 CC0 授权资源
-- 存储：Supabase Storage `poetry-images/historical/`
-
-### 8.3 书法作品
-- 存储：Supabase Storage `poetry-images/calligraphy/`
-- 作为诗词详情页的补充展示
-
-### 8.4 图片加载
-```html
-<img src="..." loading="lazy" decoding="async" alt="..." />
-<!-- 骨架屏 -->
-<div class="skeleton shimmer" />
-```
-
----
-
-## 9. Decorative Elements
-
-- **印章效果**：特定徽章使用红色印章样式（圆形 + 篆体字）
-- **水墨边框**：card 边框使用微妙的渐变边框（模拟毛笔边缘）
-- **云纹背景**：`/public/decorations/cloud-pattern.svg` 淡色平铺
-- **粒子星空**：首页背景微小白点动画
-
----
-
-*设计规范最后更新: 2026-04-07*
+- 所有图片有 alt 描述
+- 颜色对比度 ≥ 4.5:1
+- 键盘导航支持
+- 减小动作（prefers-reduced-motion）
+- ARIA labels on interactive elements

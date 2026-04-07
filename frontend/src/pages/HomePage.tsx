@@ -1,282 +1,271 @@
-import { useState, useEffect, useRef } from 'react'
+import { useState, useEffect, useCallback } from 'react'
 import { Link, useNavigate } from 'react-router-dom'
-import { Search, Sparkles, BookOpen, Trophy, ChevronRight, Star } from 'lucide-react'
-import { motion } from 'framer-motion'
+import { motion, AnimatePresence } from 'framer-motion'
+import { BookOpen, Sparkles, Flame, Trophy, ChevronRight, Shuffle, Star, Zap, Target, TrendingUp } from 'lucide-react'
 import { fetchPoems, fetchCategories } from '../lib/data'
 import type { Poem, Category } from '../types'
 
-const featuredPoems = [
-  { id: 'tang-001', title: '静夜思', author: '李白', dynasty: '唐', category: 'shi', preview: '床前明月光，疑是地上霜。' },
-  { id: 'song-ci-001', title: '水调歌头', author: '苏轼', dynasty: '宋', category: 'ci', preview: '明月几时有，把酒问青天。' },
-  { id: 'prose-001', title: '陋室铭', author: '刘禹锡', dynasty: '唐', category: 'prose', preview: '山不在高，有仙则名。' },
-  { id: 'tang-007', title: '黄鹤楼送孟浩然之广陵', author: '崔颢', dynasty: '唐', category: 'shi', preview: '昔人已乘黄鹤去，此地空余黄鹤楼。' },
+// ── Gamification State ──────────────────────────────────────────────────────
+function getXP(): number { return parseInt(localStorage.getItem('poetry_xp') || '0') }
+function getStreak(): number { return parseInt(localStorage.getItem('poetry_streak') || '0') }
+function getBadges(): string[] { return JSON.parse(localStorage.getItem('poetry_badges') || '[]') }
+function addXP(n: number) {
+  const cur = getXP()
+  localStorage.setItem('poetry_xp', String(cur + n))
+  if (cur + n >= 50 && !getBadges().includes('新手')) {
+    localStorage.setItem('poetry_badges', JSON.stringify([...getBadges(), '新手']))
+  }
+}
+
+const LEVELS = [
+  { min: 0,   name: '诗童',    emoji: '📗', color: 'text-green-400' },
+  { min: 100,  name: '诗童',    emoji: '📘', color: 'text-blue-400' },
+  { min: 300,  name: '诗童',    emoji: '📙', color: 'text-yellow-400' },
+  { min: 600,  name: '诗生',    emoji: '🎓', color: 'text-orange-400' },
+  { min: 1000, name: '诗士',    emoji: '📜', color: 'text-red-400' },
+  { min: 2000, name: '诗狂',    emoji: '🎭', color: 'text-purple-400' },
+  { min: 5000, name: '诗仙',    emoji: '🌟', color: 'text-gold' },
 ]
 
-const heroLines = [
-  '床前明月光，疑是地上霜',
-  '明月几时有，把酒问青天',
-  '大江东去，浪淘尽千古风流人物',
-  '山不在高，有仙则名',
-  '采菊东篱下，悠然见南山',
-  '春眠不觉晓，处处闻啼鸟',
-]
+function getLevel(xp: number) {
+  return [...LEVELS].reverse().find(l => xp >= l.min) || LEVELS[0]
+}
 
-function Confetti() {
-  const colors = ['#d4a843', '#e07a5f', '#81b29a', '#f4d03f', '#f87171']
+// ── Components ────────────────────────────────────────────────────────────
+
+function XPBar({ xp }: { xp: number }) {
+  const level = getLevel(xp)
+  const next = LEVELS.find(l => l.min > xp)
+  const pct = next ? Math.round((xp / next.min) * 100) : 100
   return (
-    <div className="fixed inset-0 pointer-events-none overflow-hidden z-50">
-      {Array.from({ length: 40 }).map((_, i) => (
-        <div
-          key={i}
-          className="absolute w-2 h-2 rounded-sm"
-          style={{
-            background: colors[i % colors.length],
-            left: `${Math.random() * 100}%`,
-            top: '-10px',
-            animation: `confettiFall ${1.5 + Math.random() * 2}s ease-in ${Math.random() * 1}s forwards`,
-            opacity: 0.7,
-          }}
+    <div className="bg-bg-secondary rounded-2xl p-4 border border-border">
+      <div className="flex items-center justify-between mb-2">
+        <span className="text-xs text-text-2">等级 {level.name}</span>
+        <span className="text-xs text-gold font-bold">{xp} XP</span>
+      </div>
+      <div className="h-2 bg-ink-700 rounded-full overflow-hidden">
+        <motion.div
+          className="h-full bg-gradient-to-r from-gold to-yellow-300 rounded-full"
+          animate={{ width: `${pct}%` }}
+          transition={{ duration: 0.8 }}
         />
-      ))}
+      </div>
     </div>
   )
 }
 
+function StreakBadge({ streak }: { streak: number }) {
+  return (
+    <motion.div
+      initial={{ scale: 0 }} animate={{ scale: 1 }}
+      className="flex items-center gap-2 bg-gradient-to-r from-orange-500/10 to-red-500/10 border border-orange-500/20 rounded-2xl p-4"
+    >
+      <Flame className="w-6 h-6 text-orange-400" />
+      <div>
+        <p className="text-orange-400 font-bold text-lg">{streak}天</p>
+        <p className="text-xs text-text-2">连续学习</p>
+      </div>
+    </motion.div>
+  )
+}
+
+function CategoryCard({ cat, onClick }: { cat: Category; onClick: () => void }) {
+  return (
+    <motion.button
+      whileHover={{ scale: 1.03 }} whileTap={{ scale: 0.97 }}
+      onClick={onClick}
+      className="flex-shrink-0 bg-bg-secondary rounded-2xl p-4 border border-border hover:border-gold/40 transition-all text-left min-w-[140px]"
+    >
+      <span className="text-3xl">{cat.icon}</span>
+      <p className="font-display text-sm text-text mt-1">{cat.name}</p>
+      <p className="text-xs text-text-3 mt-0.5">{cat.poemCount}篇</p>
+    </motion.button>
+  )
+}
+
+function PoemCard({ poem, onClick, index }: { poem: Poem; onClick: () => void; index: number }) {
+  return (
+    <motion.div
+      initial={{ opacity: 0, y: 20 }}
+      animate={{ opacity: 1, y: 0 }}
+      transition={{ delay: index * 0.05 }}
+      className="bg-bg-secondary rounded-2xl border border-border hover:border-gold/40 transition-all cursor-pointer group"
+      onClick={onClick}
+    >
+      <div className="h-32 bg-gradient-to-br from-gold/10 to-jade-500/5 rounded-t-2xl flex items-center justify-center">
+        <span className="text-4xl opacity-30 group-hover:opacity-60 transition-opacity">{poem.category === 'ci' ? '🏮' : poem.category === 'prose' ? '📜' : '🌙'}</span>
+      </div>
+      <div className="p-4">
+        <div className="flex items-center gap-2 mb-1">
+          <span className="text-xs px-2 py-0.5 bg-gold/10 text-gold rounded-full">{poem.dynasty}</span>
+          {poem.difficulty >= 3 && <span className="text-xs text-red-400">难点</span>}
+        </div>
+        <h3 className="font-display text-text text-base truncate">{poem.title}</h3>
+        <p className="text-xs text-text-2 mt-0.5">{poem.author}</p>
+        <p className="text-xs text-text-3 mt-1 line-clamp-2">{poem.content.split('\n')[0]}</p>
+      </div>
+    </motion.div>
+  )
+}
+
+function RandomPoemCard({ onRoll }: { onRoll: () => void }) {
+  return (
+    <motion.button
+      whileHover={{ scale: 1.02 }} whileTap={{ scale: 0.98 }}
+      onClick={onRoll}
+      className="w-full bg-gradient-to-r from-gold/20 to-amber-500/10 border border-gold/30 rounded-2xl p-5 flex items-center gap-4"
+    >
+      <Shuffle className="w-8 h-8 text-gold flex-shrink-0" />
+      <div className="text-left">
+        <p className="text-gold font-display text-sm">随机来一首</p>
+        <p className="text-text-2 text-xs mt-0.5">随机抽取一篇诗词开始学习</p>
+      </div>
+      <ChevronRight className="w-5 h-5 text-gold ml-auto" />
+    </motion.button>
+  )
+}
+
+function QuickAction({ icon: Icon, label, value, color, onClick }: {
+  icon: React.ElementType; label: string; value: string; color: string; onClick: () => void
+}) {
+  return (
+    <motion.button
+      whileTap={{ scale: 0.95 }}
+      onClick={onClick}
+      className="flex-1 bg-bg-secondary rounded-xl p-3 flex flex-col items-center gap-1 border border-border"
+    >
+      <Icon className={`w-5 h-5 ${color}`} />
+      <p className="text-xs text-text-2">{label}</p>
+      <p className={`text-sm font-bold ${color}`}>{value}</p>
+    </motion.button>
+  )
+}
+
 export default function HomePage() {
-  const [query, setQuery] = useState('')
+  const navigate = useNavigate()
   const [poems, setPoems] = useState<Poem[]>([])
   const [categories, setCategories] = useState<Category[]>([])
-  const [heroLine, setHeroLine] = useState('')
-  const [showConfetti, setShowConfetti] = useState(false)
-  const navigate = useNavigate()
+  const [loading, setLoading] = useState(true)
+  const [xp, setXP] = useState(0)
+  const [streak, setStreak] = useState(0)
+  const [dice, setDice] = useState(false)
 
   useEffect(() => {
-    fetchPoems({ limit: 6 }).then(({ poems }) => setPoems(poems))
-    fetchCategories().then(setCategories)
-    let i = 0
-    const tick = () => {
-      setHeroLine(heroLines[i % heroLines.length])
-      i++
-    }
-    tick()
-    const id = setInterval(tick, 4000)
-    return () => clearInterval(id)
+    setXP(getXP())
+    setStreak(getStreak())
+    fetchPoems({ limit: 50 })
+      .then(r => { setPoems(r.poems.slice(0, 20)); setLoading(false) })
+      .catch(() => setLoading(false))
+    fetchCategories().then(setCategories).catch(() => {})
   }, [])
 
-  function handleSearch(e: React.FormEvent) {
-    e.preventDefault()
-    if (query.trim()) {
-      navigate(`/discover?q=${encodeURIComponent(query.trim())}`)
-    }
+  const handleRandom = () => {
+    if (poems.length === 0) return
+    const rand = poems[Math.floor(Math.random() * poems.length)]
+    navigate(`/poem/${rand.id}`)
   }
 
-  function quickSearch(dynasty: string) {
-    navigate(`/discover?dynasty=${dynasty}`)
-  }
+  const handlePoemClick = (id: string) => navigate(`/poem/${id}`)
+
+  const catClick = (id: string) => navigate(`/discover?cat=${id}`)
+
+  const featured = poems.slice(0, 6)
+  const streak_ = getStreak()
 
   return (
-    <div className="min-h-screen bg-bg">
-      {showConfetti && <Confetti />}
-      {/* Hero */}
-      <section className="relative min-h-screen flex flex-col items-center justify-center px-4 overflow-hidden">
-        {/* Animated background */}
-        <div className="absolute inset-0 overflow-hidden">
-          <div className="absolute inset-0 bg-gradient-to-b from-bg via-surface to-bg opacity-80" />
-          {/* Floating particles */}
-          {Array.from({ length: 30 }).map((_, i) => (
-            <div
-              key={i}
-              className="absolute rounded-full bg-white/5"
-              style={{
-                width: `${1 + Math.random() * 2}px`,
-                height: `${1 + Math.random() * 2}px`,
-                left: `${Math.random() * 100}%`,
-                top: `${Math.random() * 100}%`,
-                animation: `float ${3 + Math.random() * 4}s ease-in-out ${Math.random() * 3}s infinite`,
-              }}
-            />
-          ))}
-        </div>
-
-        <div className="relative z-10 text-center max-w-2xl mx-auto">
-          <motion.h1
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6 }}
-            className="text-5xl md:text-7xl font-display text-text mb-4"
-          >
-            📜 诗意山河
-          </motion.h1>
-
-          {/* Hero animated poem line */}
-          <div className="h-12 flex items-center justify-center mb-8">
-            <motion.p
-              key={heroLine}
-              initial={{ opacity: 0, y: 10 }}
-              animate={{ opacity: 1, y: 0 }}
-              exit={{ opacity: 0, y: -10 }}
-              transition={{ duration: 0.8 }}
-              className="text-xl md:text-2xl text-gold/80 font-display italic"
-            >
-              {heroLine}
-            </motion.p>
+    <div className="min-h-screen pb-20">
+      {/* Header */}
+      <div className="bg-gradient-to-b from-gold/5 to-transparent px-5 pt-12 pb-8">
+        <div className="flex items-center justify-between mb-6">
+          <div>
+            <h1 className="font-display text-2xl text-gold">诗意山河</h1>
+            <p className="text-xs text-text-2 mt-0.5">诗韵悠长 · 学无止境</p>
           </div>
-
-          {/* Search */}
-          <motion.form
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ delay: 0.3, duration: 0.5 }}
-            onSubmit={handleSearch}
-            className="relative max-w-md mx-auto mb-12"
-          >
-            <div className="relative">
-              <Search className="absolute left-4 top-1/2 -translate-y-1/2 w-5 h-5 text-text-3" />
-              <input
-                type="text"
-                value={query}
-                onChange={e => setQuery(e.target.value)}
-                placeholder="搜索诗词、作者或句子..."
-                className="w-full pl-12 pr-32 py-4 bg-surface border border-border rounded-full text-text placeholder:text-text-3 focus:outline-none focus:border-gold/50 focus:ring-2 focus:ring-gold/20 transition-all text-base"
-              />
-              <button
-                type="submit"
-                className="absolute right-2 top-1/2 -translate-y-1/2 px-5 py-2 bg-grad-gold text-bg font-bold rounded-full hover:opacity-90 transition-opacity text-sm"
-              >
-                搜索
-              </button>
+          <div className="flex items-center gap-2">
+            <div className="text-right">
+              <p className="text-xs text-gold font-bold">{getLevel(xp).emoji} {getLevel(xp).name}</p>
+              <p className="text-xs text-text-2">{xp} XP</p>
             </div>
-          </motion.form>
-
-          {/* Quick access chips */}
-          <motion.div
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            transition={{ delay: 0.5 }}
-            className="flex flex-wrap justify-center gap-2 mb-12"
-          >
-            {['唐诗', '宋词', '古文', '诗经', '楚辞'].map(cat => (
-              <button
-                key={cat}
-                onClick={() => quickSearch(cat === '唐诗' ? 'Tang' : cat === '宋词' ? 'Song' : cat)}
-                className="px-4 py-2 bg-surface border border-border rounded-full text-sm text-text-2 hover:border-gold/50 hover:text-gold transition-all cursor-pointer"
-              >
-                {cat}
-              </button>
-            ))}
-          </motion.div>
-        </div>
-
-        {/* Scroll indicator */}
-        <motion.div
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
-          transition={{ delay: 1 }}
-          className="absolute bottom-8 left-1/2 -translate-x-1/2"
-        >
-          <div className="w-6 h-10 border-2 border-text-3 rounded-full flex items-start justify-center p-1">
-            <motion.div
-              animate={{ y: [0, 8, 0] }}
-              transition={{ repeat: Infinity, duration: 1.5 }}
-              className="w-1.5 h-1.5 bg-text-3 rounded-full"
-            />
           </div>
+        </div>
+        <XPBar xp={xp} />
+      </div>
+
+      <div className="px-5 space-y-5 -mt-3">
+        {/* Streak + Stats */}
+        <div className="grid grid-cols-2 gap-3">
+          <StreakBadge streak={streak_} />
+          <div className="bg-bg-secondary rounded-2xl p-4 border border-border flex items-center gap-3">
+            <Trophy className="w-6 h-6 text-gold" />
+            <div>
+              <p className="text-gold font-bold">{getBadges().length}枚</p>
+              <p className="text-xs text-text-2">已获徽章</p>
+            </div>
+          </div>
+        </div>
+
+        {/* Quick Actions */}
+        <div className="grid grid-cols-3 gap-2">
+          <QuickAction icon={Zap} label="今日已学" value={`${Math.floor(xp/10)}首`} color="text-yellow-400" onClick={() => navigate('/discover')} />
+          <QuickAction icon={Target} label="本周目标" value={`${Math.min(100, xp)}%`} color="text-green-400" onClick={() => navigate('/challenge')} />
+          <QuickAction icon={TrendingUp} label="完成度" value={`${Math.min(100, Math.round(xp/5))}%`} color="text-cyan-400" onClick={() => navigate('/discover')} />
+        </div>
+
+        {/* Random */}
+        <RandomPoemCard onRoll={handleRandom} />
+
+        {/* Categories */}
+        <div>
+          <h2 className="font-display text-sm text-text-2 mb-3 flex items-center gap-2">
+            <BookOpen className="w-4 h-4" /> 诗词分类
+          </h2>
+          <div className="flex gap-2 overflow-x-auto pb-2 -mx-5 px-5 scrollbar-hide">
+            {categories.map(c => (
+              <CategoryCard key={c.id} cat={c} onClick={() => catClick(c.id)} />
+            ))}
+          </div>
+        </div>
+
+        {/* Featured Poems */}
+        <div>
+          <div className="flex items-center justify-between mb-3">
+            <h2 className="font-display text-sm text-text-2 flex items-center gap-2">
+              <Sparkles className="w-4 h-4 text-gold" /> 精选诗词
+            </h2>
+            <button onClick={() => navigate('/discover')} className="text-xs text-gold flex items-center gap-1">
+              查看全部 <ChevronRight className="w-3 h-3" />
+            </button>
+          </div>
+          {loading ? (
+            <div className="grid grid-cols-2 gap-3">
+              {[1,2,3,4].map(i => (
+                <div key={i} className="h-40 bg-bg-secondary rounded-2xl animate-pulse" />
+              ))}
+            </div>
+          ) : (
+            <div className="grid grid-cols-2 gap-3">
+              {featured.map((p, i) => (
+                <PoemCard key={p.id} poem={p} index={i} onClick={() => handlePoemClick(p.id)} />
+              ))}
+            </div>
+          )}
+        </div>
+
+        {/* Challenge CTA */}
+        <motion.div
+          initial={{ opacity: 0 }} animate={{ opacity: 1 }}
+          className="bg-gradient-to-r from-gold/10 to-amber-500/5 rounded-2xl border border-gold/20 p-5 text-center"
+        >
+          <p className="text-gold font-display mb-1">📜 诗词挑战</p>
+          <p className="text-text-2 text-xs mb-3">每天10题，测试你的诗词功底</p>
+          <button
+            onClick={() => navigate('/challenge')}
+            className="px-6 py-2 bg-gold text-ink-900 rounded-full text-sm font-bold hover:bg-gold/90 transition-colors"
+          >
+            开始挑战
+          </button>
         </motion.div>
-      </section>
-
-      {/* Categories */}
-      <section className="px-4 pb-16 max-w-6xl mx-auto">
-        <div className="flex items-center justify-between mb-6">
-          <h2 className="text-2xl font-bold text-text flex items-center gap-2">
-            <BookOpen className="w-6 h-6 text-gold" />
-            分类浏览
-          </h2>
-          <Link to="/discover" className="text-gold text-sm flex items-center gap-1 hover:underline">
-            查看全部 <ChevronRight className="w-4 h-4" />
-          </Link>
-        </div>
-        <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 gap-3">
-          {categories.slice(0, 10).map((cat, i) => (
-            <motion.div
-              key={cat.id}
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ delay: i * 0.05 }}
-              className="group relative overflow-hidden rounded-2xl p-5 cursor-pointer"
-              style={{ background: `linear-gradient(135deg, #1a1a2e 0%, #16213e 100%)` }}
-              onClick={() => navigate(`/discover?category=${cat.id}`)}
-            >
-              <div className="text-3xl mb-2">{cat.icon}</div>
-              <div className="font-bold text-text text-sm">{cat.name}</div>
-              {cat.poemCount && (
-                <div className="text-text-3 text-xs mt-1">{cat.poemCount}首</div>
-              )}
-              <div className="absolute inset-0 border border-transparent group-hover:border-gold/30 rounded-2xl transition-all" />
-            </motion.div>
-          ))}
-        </div>
-      </section>
-
-      {/* Featured Poems */}
-      <section className="px-4 pb-20 max-w-6xl mx-auto">
-        <div className="flex items-center justify-between mb-6">
-          <h2 className="text-2xl font-bold text-text flex items-center gap-2">
-            <Star className="w-6 h-6 text-gold" />
-            精选诗词
-          </h2>
-        </div>
-        <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
-          {featuredPoems.map((p, i) => (
-            <motion.div
-              key={p.id}
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ delay: i * 0.08 }}
-            >
-              <Link
-                to={`/poem/${p.id}`}
-                className="block group p-5 bg-surface rounded-2xl border border-border hover:border-gold/40 transition-all hover:-translate-y-1"
-              >
-                <div className="flex items-center gap-2 mb-3">
-                  <span className="text-xs px-2 py-0.5 bg-gold/10 text-gold rounded-full">{p.dynasty}</span>
-                  <span className="text-xs text-text-3">{p.category === 'shi' ? '诗' : p.category === 'ci' ? '词' : '文'}</span>
-                </div>
-                <h3 className="font-display text-xl text-text mb-1">{p.title}</h3>
-                <p className="text-sm text-text-2 mb-3">{p.author}</p>
-                <p className="text-xs text-text-3 font-display leading-relaxed line-clamp-2 italic">
-                  {p.preview}
-                </p>
-              </Link>
-            </motion.div>
-          ))}
-        </div>
-      </section>
-
-      {/* Stats Banner */}
-      <section className="px-4 pb-20 max-w-6xl mx-auto">
-        <div className="grid grid-cols-3 gap-4">
-          {[
-            { label: '首诗词', value: '1,200+', icon: '📜' },
-            { label: '位诗人', value: '300+', icon: '👤' },
-            { label: '道测验', value: '5,000+', icon: '✏️' },
-          ].map((stat, i) => (
-            <motion.div
-              key={stat.label}
-              initial={{ opacity: 0, scale: 0.95 }}
-              whileInView={{ opacity: 1, scale: 1 }}
-              viewport={{ once: true }}
-              transition={{ delay: i * 0.1 }}
-              className="text-center p-6 bg-surface rounded-2xl border border-border"
-            >
-              <div className="text-3xl mb-2">{stat.icon}</div>
-              <div className="text-2xl font-bold text-gold font-mono">{stat.value}</div>
-              <div className="text-sm text-text-3 mt-1">{stat.label}</div>
-            </motion.div>
-          ))}
-        </div>
-      </section>
+      </div>
     </div>
   )
 }
