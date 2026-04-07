@@ -86,6 +86,7 @@ function QuizEngine({ poemId, onComplete }: { poemId: string; onComplete: (corre
     }
   }
 
+  const progress = Math.round((idx + (showResult ? 1 : 0)) / quiz.length * 100)
   return (
     <div className="mt-4 space-y-3">
       {/* Progress */}
@@ -94,7 +95,7 @@ function QuizEngine({ poemId, onComplete }: { poemId: string; onComplete: (corre
         <div className="flex-1 h-2 bg-bg rounded-full overflow-hidden">
           <motion.div
             className="h-full bg-gold rounded-full"
-            animate={{ width: `${((idx + (showResult ? 1 : 0)) / quiz.length * 100}%` }}
+            animate={{ width: (Math.round((idx + (showResult ? 1 : 0)) / quiz.length * 100)) + "%" }}
           />
         </div>
         {combo >= 2 && (
