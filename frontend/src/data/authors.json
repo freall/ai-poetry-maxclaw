@@ -1,0 +1,261 @@
+[
+  {
+    "id": "libai",
+    "name": "李白",
+    "nickname": "青莲居士",
+    "dynasty": "Tang",
+    "birthYear": 701,
+    "deathYear": 762,
+    "bio": "李白（701-762），字太白，号青莲居士，唐代伟大的浪漫主义诗人，被称为诗仙。代表作有《静夜思》《望庐山瀑布》《将进酒》等。",
+    "portraitUrl": "",
+    "representativeWorks": [
+      "tang-001",
+      "tang-002",
+      "tang-003"
+    ]
+  },
+  {
+    "id": "dufu",
+    "name": "杜甫",
+    "nickname": "少陵野老",
+    "dynasty": "Tang",
+    "birthYear": 712,
+    "deathYear": 770,
+    "bio": "杜甫（712-770），字子美，唐代伟大的现实主义诗人，被称为诗圣。",
+    "portraitUrl": "",
+    "representativeWorks": [
+      "tang-009"
+    ]
+  },
+  {
+    "id": "wangwei",
+    "name": "王维",
+    "nickname": "摩诘居士",
+    "dynasty": "Tang",
+    "birthYear": 699,
+    "deathYear": 761,
+    "bio": "王维（699-761），字摩诘，唐代山水田园派诗人，苏轼称其诗中有画、画中有诗。",
+    "portraitUrl": "",
+    "representativeWorks": [
+      "tang-012",
+      "tang-013",
+      "tang-014",
+      "tang-015",
+      "tang-017"
+    ]
+  },
+  {
+    "id": "wangzhihuan",
+    "name": "王之涣",
+    "nickname": "",
+    "dynasty": "Tang",
+    "birthYear": 688,
+    "deathYear": 742,
+    "bio": "王之涣，盛唐诗人，以边塞诗闻名，《登鹳雀楼》《凉州词》为其代表作。",
+    "portraitUrl": "",
+    "representativeWorks": [
+      "tang-005",
+      "tang-016"
+    ]
+  },
+  {
+    "id": "menghaoran",
+    "name": "孟浩然",
+    "nickname": "孟山人",
+    "dynasty": "Tang",
+    "birthYear": 689,
+    "deathYear": 740,
+    "bio": "孟浩然（689-740），唐代山水田园派诗人，《春晓》《过故人庄》为其代表作。",
+    "portraitUrl": "",
+    "representativeWorks": [
+      "tang-004"
+    ]
+  },
+  {
+    "id": "wangchangling",
+    "name": "王昌龄",
+    "nickname": "七绝圣手",
+    "dynasty": "Tang",
+    "birthYear": 698,
+    "deathYear": 756,
+    "bio": "王昌龄，盛唐边塞诗人，被称为七绝圣手，《出塞》《芙蓉楼送辛渐》为千古名作。",
+    "portraitUrl": "",
+    "representativeWorks": [
+      "tang-006",
+      "tang-018",
+      "tang-019"
+    ]
+  },
+  {
+    "id": "cuihao",
+    "name": "崔颢",
+    "nickname": "",
+    "dynasty": "Tang",
+    "birthYear": 704,
+    "deathYear": 754,
+    "bio": "崔颢（约704-754），唐代诗人，《黄鹤楼》被誉为唐人七律之首。",
+    "portraitUrl": "",
+    "representativeWorks": [
+      "tang-007"
+    ]
+  },
+  {
+    "id": "lishen",
+    "name": "李绅",
+    "nickname": "",
+    "dynasty": "Tang",
+    "birthYear": 772,
+    "deathYear": 846,
+    "bio": "李绅（772-846），唐代诗人，《悯农》二首表达了对农民艰辛劳动的深切同情。",
+    "portraitUrl": "",
+    "representativeWorks": [
+      "tang-008"
+    ]
+  },
+  {
+    "id": "mengjiao",
+    "name": "孟郊",
+    "nickname": "",
+    "dynasty": "Tang",
+    "birthYear": 751,
+    "deathYear": 814,
+    "bio": "孟郊（751-814），唐代诗人，与贾岛并称郊寒岛瘦，《游子吟》为代表。",
+    "portraitUrl": "",
+    "representativeWorks": [
+      "tang-011"
+    ]
+  },
+  {
+    "id": "zhangji",
+    "name": "张继",
+    "nickname": "",
+    "dynasty": "Tang",
+    "birthYear": 715,
+    "deathYear": 779,
+    "bio": "张继（约715-约779），唐代诗人，《枫桥夜泊》是唐代夜景诗的绝唱。",
+    "portraitUrl": "",
+    "representativeWorks": [
+      "tang-010"
+    ]
+  },
+  {
+    "id": "sushi",
+    "name": "苏轼",
+    "nickname": "东坡居士",
+    "dynasty": "Song",
+    "birthYear": 1037,
+    "deathYear": 1101,
+    "bio": "苏轼（1037-1101），字子瞻，号东坡居士，北宋文学家，为唐宋八大家之一。",
+    "portraitUrl": "",
+    "representativeWorks": [
+      "song-ci-001",
+      "song-ci-002"
+    ]
+  },
+  {
+    "id": "liqingzhao",
+    "name": "李清照",
+    "nickname": "易安居士",
+    "dynasty": "Song",
+    "birthYear": 1084,
+    "deathYear": 1155,
+    "bio": "李清照（1084-约1155），号易安居士，宋代最杰出的女词人。",
+    "portraitUrl": "",
+    "representativeWorks": [
+      "song-ci-003"
+    ]
+  },
+  {
+    "id": "xinqiji",
+    "name": "辛弃疾",
+    "nickname": "稼轩居士",
+    "dynasty": "Song",
+    "birthYear": 1140,
+    "deathYear": 1207,
+    "bio": "辛弃疾（1140-1207），字幼安，号稼轩，南宋豪放派词人的代表。",
+    "portraitUrl": "",
+    "representativeWorks": [
+      "song-ci-004",
+      "song-ci-005",
+      "song-ci-006"
+    ]
+  },
+  {
+    "id": "yuefei",
+    "name": "岳飞",
+    "nickname": "鹏举",
+    "dynasty": "Song",
+    "birthYear": 1103,
+    "deathYear": 1142,
+    "bio": "岳飞（1103-1142），字鹏举，南宋抗金名将，《满江红·写怀》为其词作绝唱。",
+    "portraitUrl": "",
+    "representativeWorks": [
+      "song-ci-004"
+    ]
+  },
+  {
+    "id": "liuyuxi",
+    "name": "刘禹锡",
+    "nickname": "宾客",
+    "dynasty": "Tang",
+    "birthYear": 772,
+    "deathYear": 842,
+    "bio": "刘禹锡（772-842），字梦得，唐代文学家，与白居易并称刘白，《陋室铭为代表。",
+    "portraitUrl": "",
+    "representativeWorks": [
+      "prose-001"
+    ]
+  },
+  {
+    "id": "taoyuanming",
+    "name": "陶渊明",
+    "nickname": "五柳先生",
+    "dynasty": "Wei",
+    "birthYear": 365,
+    "deathYear": 427,
+    "bio": "陶渊明（365-427），名潜，字元亮，东晋诗人，中国田园诗派的创始人。",
+    "portraitUrl": "",
+    "representativeWorks": [
+      "prose-004"
+    ]
+  },
+  {
+    "id": "mengzi",
+    "name": "孟子",
+    "nickname": "",
+    "dynasty": "Pre-Qin",
+    "birthYear": -372,
+    "deathYear": -289,
+    "bio": "孟子（约前372-前289），名轲，战国时期思想家，儒家学派代表人物，被后世尊称为亚圣。",
+    "portraitUrl": "",
+    "representativeWorks": [
+      "prose-005"
+    ]
+  },
+  {
+    "id": "zhouduyi",
+    "name": "周敦颐",
+    "nickname": "",
+    "dynasty": "Song",
+    "birthYear": 1017,
+    "deathYear": 1073,
+    "bio": "周敦颐（1017-1073），字茂叔，北宋理学家，《爱莲说》是他托物言志的名篇。",
+    "portraitUrl": "",
+    "representativeWorks": [
+      "prose-002"
+    ]
+  },
+  {
+    "id": "fanzhongyan",
+    "name": "范仲淹",
+    "nickname": "文正",
+    "dynasty": "Song",
+    "birthYear": 989,
+    "deathYear": 1052,
+    "bio": "范仲淹（989-1052），字希文，北宋政治家、文学家，《岳阳楼记》提出先天下之忧而忧、后天下之乐而乐。",
+    "portraitUrl": "",
+    "representativeWorks": [
+      "prose-003"
+    ]
+  }
+]

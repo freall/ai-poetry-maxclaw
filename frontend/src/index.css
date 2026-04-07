@@ -1,0 +1,76 @@
+@import url('https://fonts.googleapis.com/css2?family=Ma+Shan+Zheng&family=Noto+Sans+SC:wght@300;400;500;700&family=Noto+Serif+SC:wght@400;700&display=swap');
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* ── Global Styles ── */
+* { box-sizing: border-box; }
+
+html {
+  scroll-behavior: smooth;
+  color-scheme: dark;
+}
+
+body {
+  font-family: 'Noto Sans SC', system-ui, sans-serif;
+  background-color: #0f0f23;
+  color: #f5f0e8;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* ── Scrollbar ── */
+::-webkit-scrollbar { width: 5px; height: 5px; }
+::-webkit-scrollbar-track { background: transparent; }
+::-webkit-scrollbar-thumb { background: rgba(212,168,67,0.3); border-radius: 3px; }
+::-webkit-scrollbar-thumb:hover { background: rgba(212,168,67,0.5); }
+
+/* ── Text Selection ── */
+::selection { background: rgba(212,168,67,0.3); color: #f5f0e8; }
+
+/* ── Focus Visible ── */
+:focus-visible { outline: 2px solid rgba(212,168,67,0.6); outline-offset: 2px; border-radius: 4px; }
+
+/* ── Animations ── */
+@keyframes confettiFall {
+  0%   { transform: translateY(-20px) rotate(0deg); opacity: 1; }
+  100% { transform: translateY(100vh) rotate(720deg); opacity: 0; }
+}
+
+@keyframes shimmer {
+  0%   { background-position: 0% 50%; }
+  50%  { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+/* ── Tailwind overrides ── */
+@layer components {
+  .btn-primary {
+    @apply px-6 py-3 bg-gradient-to-r from-gold to-yellow-300 text-bg font-bold rounded-btn transition-all hover:opacity-90 active:scale-95;
+  }
+
+  .card {
+    @apply bg-surface border border-border rounded-card p-4;
+  }
+
+  .quiz-opt {
+    @apply w-full px-4 py-3 rounded-xl text-left bg-surface-2 border-2 border-border text-text-2 transition-all hover:border-gold/50 hover:bg-gold/5 cursor-pointer;
+  }
+
+  .quiz-opt.correct {
+    @apply border-jade bg-jade/10 text-jade;
+  }
+
+  .quiz-opt.wrong {
+    @apply border-coral bg-coral/10 text-coral;
+  }
+
+  /* Grad text */
+  .grad-text {
+    background: linear-gradient(135deg, #d4a843, #f87171, #60a5fa);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-size: 200% auto;
+    animation: shimmer 3s linear infinite;
+  }
+}
