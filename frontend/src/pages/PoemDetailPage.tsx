@@ -208,38 +208,49 @@ export default function PoemDetailPage() {
   return (
     <div className="min-h-screen pb-20">
       {/* Hero Image Area */}
-      <div className={`relative h-52 bg-gradient-to-b ${bgGradient}`}>
-        {/* Back + Nav */}
+      <div className="relative h-56 overflow-hidden">
+        {poem.imageUrl ? (
+          <img src={poem.imageUrl} alt={poem.title}
+            className="absolute inset-0 w-full h-full object-cover"
+            onError={(e) => { (e.target as HTMLImageElement).style.display='none' }} />
+        ) : (
+          <div className={`absolute inset-0 bg-gradient-to-b ${bgGradient}`} />
+        )}
+        <div className="absolute inset-0 bg-gradient-to-t from-bg via-bg/40 to-transparent" />
+        {poem.imageUrl && (
+          <div className="absolute top-12 right-4">
+            <span className={`text-xs px-2 py-1 rounded-full backdrop-blur ${poem.imageType==='historical' ? 'bg-emerald-500/20 text-emerald-300 border border-emerald-500/30' : 'bg-gold/20 text-gold border border-gold/30'}`}>
+              {poem.imageType==='historical'?'🏛 故宫名画':'✨ AI 意境图'}
+            </span>
+          </div>
+        )}
         <div className="absolute top-0 inset-x-0 z-10 flex items-center justify-between px-4 pt-12">
-          <button onClick={() => navigate(-1)} className="w-9 h-9 bg-bg/60 backdrop-blur rounded-full flex items-center justify-center">
+          <button onClick={()=>navigate(-1)} className="w-9 h-9 bg-bg/60 backdrop-blur rounded-full flex items-center justify-center">
             <ArrowLeft className="w-5 h-5 text-text" />
           </button>
           <div className="flex gap-1">
-            <button onClick={handlePrev} disabled={!prevPoem}
-              className="w-9 h-9 bg-bg/60 backdrop-blur rounded-full flex items-center justify-center disabled:opacity-30">
+            <button onClick={handlePrev} disabled={!prevPoem} className="w-9 h-9 bg-bg/60 backdrop-blur rounded-full flex items-center justify-center disabled:opacity-30">
               <ChevronLeft className="w-5 h-5 text-text" />
             </button>
-            <button onClick={handleNext} disabled={!nextPoem}
-              className="w-9 h-9 bg-bg/60 backdrop-blur rounded-full flex items-center justify-center disabled:opacity-30">
+            <button onClick={handleNext} disabled={!nextPoem} className="w-9 h-9 bg-bg/60 backdrop-blur rounded-full flex items-center justify-center disabled:opacity-30">
               <ChevronRight className="w-5 h-5 text-text" />
             </button>
           </div>
         </div>
-        {/* Category + Dynasty badge */}
         <div className="absolute bottom-4 left-4 flex gap-2">
           <span className="text-xs px-2 py-1 bg-gold/20 text-gold rounded-full backdrop-blur">{poem.dynasty}</span>
-          <span className="text-xs px-2 py-1 bg-bg/40 text-text-2 rounded-full backdrop-blur">
-            {poem.category === 'shi' ? '诗' : poem.category === 'ci' ? '词' : '文'}
-          </span>
-          {poem.difficulty >= 3 && (
-            <span className="text-xs px-2 py-1 bg-red-500/20 text-red-400 rounded-full">难点</span>
-          )}
+          <span className="text-xs px-2 py-1 bg-bg/40 text-text-2 rounded-full backdrop-blur">{poem.category==='shi'?'诗':poem.category==='ci'?'词':'文'}</span>
+          {poem.difficulty>=3 && <span className="text-xs px-2 py-1 bg-red-500/20 text-red-400 rounded-full">难点</span>}
         </div>
-        {/* Poem title on image */}
         <div className="absolute bottom-4 right-4 text-right">
           <h1 className="font-display text-2xl text-text drop-shadow-lg">{poem.title}</h1>
           <p className="text-xs text-text-2">{poem.author}</p>
         </div>
+        {poem.imageType==='historical' && poem.historicalSource && (
+          <div className="absolute bottom-3 left-1/2 -translate-x-1/2">
+            <p className="text-xs text-text-3/60 bg-bg/40 px-2 py-0.5 rounded-full backdrop-blur">{poem.historicalSource}</p>
+          </div>
+        )}
       </div>
 
       {/* Tabs */}

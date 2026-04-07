@@ -89,20 +89,33 @@ function PoemCard({ poem, onClick, index }: { poem: Poem; onClick: () => void; i
       initial={{ opacity: 0, y: 20 }}
       animate={{ opacity: 1, y: 0 }}
       transition={{ delay: index * 0.05 }}
-      className="bg-bg-secondary rounded-2xl border border-border hover:border-gold/40 transition-all cursor-pointer group"
+      className="bg-bg-secondary rounded-2xl border border-border hover:border-gold/40 transition-all cursor-pointer group overflow-hidden"
       onClick={onClick}
     >
-      <div className="h-32 bg-gradient-to-br from-gold/10 to-jade-500/5 rounded-t-2xl flex items-center justify-center">
-        <span className="text-4xl opacity-30 group-hover:opacity-60 transition-opacity">{poem.category === 'ci' ? '🏮' : poem.category === 'prose' ? '📜' : '🌙'}</span>
-      </div>
-      <div className="p-4">
-        <div className="flex items-center gap-2 mb-1">
-          <span className="text-xs px-2 py-0.5 bg-gold/10 text-gold rounded-full">{poem.dynasty}</span>
-          {poem.difficulty >= 3 && <span className="text-xs text-red-400">难点</span>}
+      <div className="relative h-28 overflow-hidden rounded-t-2xl">
+        {poem.imageUrl ? (
+          <img src={poem.imageUrl} alt={poem.title}
+            className="w-full h-full object-cover opacity-70 group-hover:opacity-100 transition-opacity"
+            onError={(e)=>{(e.target as HTMLImageElement).style.display='none'}} />
+        ) : (
+          <div className="absolute inset-0 bg-gradient-to-br from-gold/10 to-jade-500/5" />
+        )}
+        <div className="absolute inset-0 bg-gradient-to-t from-bg-secondary to-transparent opacity-60" />
+        <div className="absolute bottom-2 left-2">
+          <span className={`text-xs px-1.5 py-0.5 rounded-full backdrop-blur ${
+            poem.imageType==='historical' ? 'bg-emerald-500/30 text-emerald-200' : 'bg-gold/30 text-gold'
+          }`}>
+            {poem.imageType==='historical'?'🏛':'✨'}
+          </span>
         </div>
-        <h3 className="font-display text-text text-base truncate">{poem.title}</h3>
+      </div>
+      <div className="p-3">
+        <div className="flex items-center gap-1.5 mb-1">
+          <span className="text-xs px-1.5 py-0.5 bg-gold/10 text-gold rounded-full">{poem.dynasty}</span>
+          {poem.difficulty>=3 && <span className="text-xs text-red-400">难点</span>}
+        </div>
+        <h3 className="font-display text-sm text-text truncate">{poem.title}</h3>
         <p className="text-xs text-text-2 mt-0.5">{poem.author}</p>
-        <p className="text-xs text-text-3 mt-1 line-clamp-2">{poem.content.split('\n')[0]}</p>
       </div>
     </motion.div>
   )

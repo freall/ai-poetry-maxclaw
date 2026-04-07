@@ -24,9 +24,17 @@ function PoemGridItem({ poem, onClick }: { poem: Poem; onClick: () => void }) {
       onClick={onClick}
       className="bg-bg-secondary rounded-2xl border border-border text-left overflow-hidden hover:border-gold/30 transition-all group"
     >
-      <div className="h-24 bg-gradient-to-br from-gold/8 to-transparent flex items-center justify-center">
-        <span className="text-3xl opacity-20 group-hover:opacity-40 transition-opacity">
-          {poem.category === 'ci' ? '🏮' : poem.category === 'prose' ? '📜' : '🌙'}
+      <div className="relative h-24 overflow-hidden rounded-t-2xl">
+        {poem.imageUrl ? (
+          <img src={poem.imageUrl} alt={poem.title}
+            className="w-full h-full object-cover opacity-60 group-hover:opacity-80 transition-opacity"
+            onError={(e)=>{(e.target as HTMLImageElement).style.display='none'}} />
+        ) : (
+          <div className="absolute inset-0 bg-gradient-to-br from-gold/8 to-transparent" />
+        )}
+        <div className="absolute inset-0 bg-gradient-to-t from-bg-secondary to-transparent opacity-40" />
+        <span className="absolute top-2 right-2 text-xs opacity-40">
+          {poem.imageType==='historical'?'🏛':'✨'}
         </span>
       </div>
       <div className="p-3">

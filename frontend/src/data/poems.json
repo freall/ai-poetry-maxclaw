@@ -22,7 +22,10 @@
     "aiImageUrl": "",
     "historicalImageUrls": [],
     "calligraphyImageUrls": [],
-    "relatedPoemIds": []
+    "relatedPoemIds": [],
+    "imageType": "historical",
+    "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/1/1e/Gu_Hongzhong%27s_Night_Revels_1_edit.jpg/1280px-Gu_Hongzhong%27s_Night_Revels_1_edit.jpg",
+    "historicalSource": "故宫博物院/Wikimedia Commons (Public Domain)"
   },
   {
     "id": "tang-002",
@@ -47,7 +50,10 @@
     "aiImageUrl": "",
     "historicalImageUrls": [],
     "calligraphyImageUrls": [],
-    "relatedPoemIds": []
+    "relatedPoemIds": [],
+    "imageType": "historical",
+    "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/3/3a/Wang_Ximeng._A_Thousand_Li_of_Rivers_and_Mountains._%28Complete%2C_51%2C3x1191%2C5_cm%29._1113._Palace_museum%2C_Beijing.jpg/2560px-Wang_Ximeng._A_Thousand_Li_of_Rivers_and_Mountains._%28Complete%2C_51%2C3x1191%2C5_cm%29._1113._Palace_museum%2C_Beijing.jpg",
+    "historicalSource": "故宫博物院/Wikimedia Commons (Public Domain)"
   },
   {
     "id": "tang-003",
@@ -71,7 +77,10 @@
     "aiImageUrl": "",
     "historicalImageUrls": [],
     "calligraphyImageUrls": [],
-    "relatedPoemIds": []
+    "relatedPoemIds": [],
+    "imageType": "historical",
+    "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/1/1e/Gu_Hongzhong%27s_Night_Revels_1_edit.jpg/1280px-Gu_Hongzhong%27s_Night_Revels_1_edit.jpg",
+    "historicalSource": "故宫博物院/Wikimedia Commons (Public Domain)"
   },
   {
     "id": "tang-004",
@@ -95,7 +104,10 @@
     "aiImageUrl": "",
     "historicalImageUrls": [],
     "calligraphyImageUrls": [],
-    "relatedPoemIds": []
+    "relatedPoemIds": [],
+    "imageType": "historical",
+    "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/1/1e/Gu_Hongzhong%27s_Night_Revels_1_edit.jpg/1280px-Gu_Hongzhong%27s_Night_Revels_1_edit.jpg",
+    "historicalSource": "故宫博物院/Wikimedia Commons (Public Domain)"
   },
   {
     "id": "tang-005",
@@ -120,7 +132,10 @@
     "aiImageUrl": "",
     "historicalImageUrls": [],
     "calligraphyImageUrls": [],
-    "relatedPoemIds": []
+    "relatedPoemIds": [],
+    "imageType": "historical",
+    "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/3/3a/Wang_Ximeng._A_Thousand_Li_of_Rivers_and_Mountains._%28Complete%2C_51%2C3x1191%2C5_cm%29._1113._Palace_museum%2C_Beijing.jpg/2560px-Wang_Ximeng._A_Thousand_Li_of_Rivers_and_Mountains._%28Complete%2C_51%2C3x1191%2C5_cm%29._1113._Palace_museum%2C_Beijing.jpg",
+    "historicalSource": "故宫博物院/Wikimedia Commons (Public Domain)"
   },
   {
     "id": "tang-006",
@@ -145,7 +160,10 @@
     "aiImageUrl": "",
     "historicalImageUrls": [],
     "calligraphyImageUrls": [],
-    "relatedPoemIds": []
+    "relatedPoemIds": [],
+    "imageType": "historical",
+    "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/9/9d/Alongtheriver_QingMing.jpg/2560px-Alongtheriver_QingMing.jpg",
+    "historicalSource": "故宫博物院/Wikimedia Commons (Public Domain)"
   },
   {
     "id": "tang-007",
@@ -170,7 +188,10 @@
     "aiImageUrl": "",
     "historicalImageUrls": [],
     "calligraphyImageUrls": [],
-    "relatedPoemIds": []
+    "relatedPoemIds": [],
+    "imageType": "historical",
+    "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/3/3a/Wang_Ximeng._A_Thousand_Li_of_Rivers_and_Mountains._%28Complete%2C_51%2C3x1191%2C5_cm%29._1113._Palace_museum%2C_Beijing.jpg/2560px-Wang_Ximeng._A_Thousand_Li_of_Rivers_and_Mountains._%28Complete%2C_51%2C3x1191%2C5_cm%29._1113._Palace_museum%2C_Beijing.jpg",
+    "historicalSource": "故宫博物院/Wikimedia Commons (Public Domain)"
   },
   {
     "id": "tang-008",
@@ -195,7 +216,9 @@
     "aiImageUrl": "",
     "historicalImageUrls": [],
     "calligraphyImageUrls": [],
-    "relatedPoemIds": []
+    "relatedPoemIds": [],
+    "imageType": "ai",
+    "imageUrl": "https://cdn.hailuoai.com/mcp/image_tool/output/473932182464974854/372569239945651/1775574748_e8a32237.png"
   },
   {
     "id": "tang-009",
@@ -220,7 +243,10 @@
     "aiImageUrl": "",
     "historicalImageUrls": [],
     "calligraphyImageUrls": [],
-    "relatedPoemIds": []
+    "relatedPoemIds": [],
+    "imageType": "historical",
+    "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/9/9d/Alongtheriver_QingMing.jpg/2560px-Alongtheriver_QingMing.jpg",
+    "historicalSource": "故宫博物院/Wikimedia Commons (Public Domain)"
   },
   {
     "id": "tang-010",
@@ -246,7 +272,10 @@
     "aiImageUrl": "",
     "historicalImageUrls": [],
     "calligraphyImageUrls": [],
-    "relatedPoemIds": []
+    "relatedPoemIds": [],
+    "imageType": "historical",
+    "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/3/3a/Wang_Ximeng._A_Thousand_Li_of_Rivers_and_Mountains._%28Complete%2C_51%2C3x1191%2C5_cm%29._1113._Palace_museum%2C_Beijing.jpg/2560px-Wang_Ximeng._A_Thousand_Li_of_Rivers_and_Mountains._%28Complete%2C_51%2C3x1191%2C5_cm%29._1113._Palace_museum%2C_Beijing.jpg",
+    "historicalSource": "故宫博物院/Wikimedia Commons (Public Domain)"
   },
   {
     "id": "tang-011",
@@ -271,7 +300,10 @@
     "aiImageUrl": "",
     "historicalImageUrls": [],
     "calligraphyImageUrls": [],
-    "relatedPoemIds": []
+    "relatedPoemIds": [],
+    "imageType": "historical",
+    "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/9/9d/Alongtheriver_QingMing.jpg/2560px-Alongtheriver_QingMing.jpg",
+    "historicalSource": "故宫博物院/Wikimedia Commons (Public Domain)"
   },
   {
     "id": "tang-012",
@@ -296,7 +328,10 @@
     "aiImageUrl": "",
     "historicalImageUrls": [],
     "calligraphyImageUrls": [],
-    "relatedPoemIds": []
+    "relatedPoemIds": [],
+    "imageType": "historical",
+    "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/9/9d/Alongtheriver_QingMing.jpg/2560px-Alongtheriver_QingMing.jpg",
+    "historicalSource": "故宫博物院/Wikimedia Commons (Public Domain)"
   },
   {
     "id": "tang-013",
@@ -321,7 +356,10 @@
     "aiImageUrl": "",
     "historicalImageUrls": [],
     "calligraphyImageUrls": [],
-    "relatedPoemIds": []
+    "relatedPoemIds": [],
+    "imageType": "historical",
+    "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/9/9d/Alongtheriver_QingMing.jpg/2560px-Alongtheriver_QingMing.jpg",
+    "historicalSource": "故宫博物院/Wikimedia Commons (Public Domain)"
   },
   {
     "id": "tang-014",
@@ -346,7 +384,10 @@
     "aiImageUrl": "",
     "historicalImageUrls": [],
     "calligraphyImageUrls": [],
-    "relatedPoemIds": []
+    "relatedPoemIds": [],
+    "imageType": "historical",
+    "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/3/3a/Wang_Ximeng._A_Thousand_Li_of_Rivers_and_Mountains._%28Complete%2C_51%2C3x1191%2C5_cm%29._1113._Palace_museum%2C_Beijing.jpg/2560px-Wang_Ximeng._A_Thousand_Li_of_Rivers_and_Mountains._%28Complete%2C_51%2C3x1191%2C5_cm%29._1113._Palace_museum%2C_Beijing.jpg",
+    "historicalSource": "故宫博物院/Wikimedia Commons (Public Domain)"
   },
   {
     "id": "tang-015",
@@ -372,7 +413,10 @@
     "aiImageUrl": "",
     "historicalImageUrls": [],
     "calligraphyImageUrls": [],
-    "relatedPoemIds": []
+    "relatedPoemIds": [],
+    "imageType": "historical",
+    "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/1/1e/Gu_Hongzhong%27s_Night_Revels_1_edit.jpg/1280px-Gu_Hongzhong%27s_Night_Revels_1_edit.jpg",
+    "historicalSource": "故宫博物院/Wikimedia Commons (Public Domain)"
   },
   {
     "id": "tang-016",
@@ -397,7 +441,10 @@
     "aiImageUrl": "",
     "historicalImageUrls": [],
     "calligraphyImageUrls": [],
-    "relatedPoemIds": []
+    "relatedPoemIds": [],
+    "imageType": "historical",
+    "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/3/3a/Wang_Ximeng._A_Thousand_Li_of_Rivers_and_Mountains._%28Complete%2C_51%2C3x1191%2C5_cm%29._1113._Palace_museum%2C_Beijing.jpg/2560px-Wang_Ximeng._A_Thousand_Li_of_Rivers_and_Mountains._%28Complete%2C_51%2C3x1191%2C5_cm%29._1113._Palace_museum%2C_Beijing.jpg",
+    "historicalSource": "故宫博物院/Wikimedia Commons (Public Domain)"
   },
   {
     "id": "tang-017",
@@ -422,7 +469,10 @@
     "aiImageUrl": "",
     "historicalImageUrls": [],
     "calligraphyImageUrls": [],
-    "relatedPoemIds": []
+    "relatedPoemIds": [],
+    "imageType": "historical",
+    "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/1/1e/Gu_Hongzhong%27s_Night_Revels_1_edit.jpg/1280px-Gu_Hongzhong%27s_Night_Revels_1_edit.jpg",
+    "historicalSource": "故宫博物院/Wikimedia Commons (Public Domain)"
   },
   {
     "id": "tang-018",
@@ -447,7 +497,10 @@
     "aiImageUrl": "",
     "historicalImageUrls": [],
     "calligraphyImageUrls": [],
-    "relatedPoemIds": []
+    "relatedPoemIds": [],
+    "imageType": "historical",
+    "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/3/3a/Wang_Ximeng._A_Thousand_Li_of_Rivers_and_Mountains._%28Complete%2C_51%2C3x1191%2C5_cm%29._1113._Palace_museum%2C_Beijing.jpg/2560px-Wang_Ximeng._A_Thousand_Li_of_Rivers_and_Mountains._%28Complete%2C_51%2C3x1191%2C5_cm%29._1113._Palace_museum%2C_Beijing.jpg",
+    "historicalSource": "故宫博物院/Wikimedia Commons (Public Domain)"
   },
   {
     "id": "tang-019",
@@ -472,7 +525,10 @@
     "aiImageUrl": "",
     "historicalImageUrls": [],
     "calligraphyImageUrls": [],
-    "relatedPoemIds": []
+    "relatedPoemIds": [],
+    "imageType": "historical",
+    "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/3/3a/Wang_Ximeng._A_Thousand_Li_of_Rivers_and_Mountains._%28Complete%2C_51%2C3x1191%2C5_cm%29._1113._Palace_museum%2C_Beijing.jpg/2560px-Wang_Ximeng._A_Thousand_Li_of_Rivers_and_Mountains._%28Complete%2C_51%2C3x1191%2C5_cm%29._1113._Palace_museum%2C_Beijing.jpg",
+    "historicalSource": "故宫博物院/Wikimedia Commons (Public Domain)"
   },
   {
     "id": "tang-020",
@@ -497,7 +553,10 @@
     "aiImageUrl": "",
     "historicalImageUrls": [],
     "calligraphyImageUrls": [],
-    "relatedPoemIds": []
+    "relatedPoemIds": [],
+    "imageType": "historical",
+    "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/3/3a/Wang_Ximeng._A_Thousand_Li_of_Rivers_and_Mountains._%28Complete%2C_51%2C3x1191%2C5_cm%29._1113._Palace_museum%2C_Beijing.jpg/2560px-Wang_Ximeng._A_Thousand_Li_of_Rivers_and_Mountains._%28Complete%2C_51%2C3x1191%2C5_cm%29._1113._Palace_museum%2C_Beijing.jpg",
+    "historicalSource": "故宫博物院/Wikimedia Commons (Public Domain)"
   },
   {
     "id": "tang-021",
@@ -523,7 +582,10 @@
     "aiImageUrl": "",
     "historicalImageUrls": [],
     "calligraphyImageUrls": [],
-    "relatedPoemIds": []
+    "relatedPoemIds": [],
+    "imageType": "historical",
+    "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/3/3a/Wang_Ximeng._A_Thousand_Li_of_Rivers_and_Mountains._%28Complete%2C_51%2C3x1191%2C5_cm%29._1113._Palace_museum%2C_Beijing.jpg/2560px-Wang_Ximeng._A_Thousand_Li_of_Rivers_and_Mountains._%28Complete%2C_51%2C3x1191%2C5_cm%29._1113._Palace_museum%2C_Beijing.jpg",
+    "historicalSource": "故宫博物院/Wikimedia Commons (Public Domain)"
   },
   {
     "id": "tang-022",
@@ -548,7 +610,10 @@
     "aiImageUrl": "",
     "historicalImageUrls": [],
     "calligraphyImageUrls": [],
-    "relatedPoemIds": []
+    "relatedPoemIds": [],
+    "imageType": "historical",
+    "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/3/3a/Wang_Ximeng._A_Thousand_Li_of_Rivers_and_Mountains._%28Complete%2C_51%2C3x1191%2C5_cm%29._1113._Palace_museum%2C_Beijing.jpg/2560px-Wang_Ximeng._A_Thousand_Li_of_Rivers_and_Mountains._%28Complete%2C_51%2C3x1191%2C5_cm%29._1113._Palace_museum%2C_Beijing.jpg",
+    "historicalSource": "故宫博物院/Wikimedia Commons (Public Domain)"
   },
   {
     "id": "tang-023",
@@ -573,7 +638,10 @@
     "aiImageUrl": "",
     "historicalImageUrls": [],
     "calligraphyImageUrls": [],
-    "relatedPoemIds": []
+    "relatedPoemIds": [],
+    "imageType": "historical",
+    "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/1/1e/Gu_Hongzhong%27s_Night_Revels_1_edit.jpg/1280px-Gu_Hongzhong%27s_Night_Revels_1_edit.jpg",
+    "historicalSource": "故宫博物院/Wikimedia Commons (Public Domain)"
   },
   {
     "id": "tang-024",
@@ -598,7 +666,10 @@
     "aiImageUrl": "",
     "historicalImageUrls": [],
     "calligraphyImageUrls": [],
-    "relatedPoemIds": []
+    "relatedPoemIds": [],
+    "imageType": "historical",
+    "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/1/1e/Gu_Hongzhong%27s_Night_Revels_1_edit.jpg/1280px-Gu_Hongzhong%27s_Night_Revels_1_edit.jpg",
+    "historicalSource": "故宫博物院/Wikimedia Commons (Public Domain)"
   },
   {
     "id": "tang-025",
@@ -624,7 +695,10 @@
     "aiImageUrl": "",
     "historicalImageUrls": [],
     "calligraphyImageUrls": [],
-    "relatedPoemIds": []
+    "relatedPoemIds": [],
+    "imageType": "historical",
+    "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/3/3a/Wang_Ximeng._A_Thousand_Li_of_Rivers_and_Mountains._%28Complete%2C_51%2C3x1191%2C5_cm%29._1113._Palace_museum%2C_Beijing.jpg/2560px-Wang_Ximeng._A_Thousand_Li_of_Rivers_and_Mountains._%28Complete%2C_51%2C3x1191%2C5_cm%29._1113._Palace_museum%2C_Beijing.jpg",
+    "historicalSource": "故宫博物院/Wikimedia Commons (Public Domain)"
   },
   {
     "id": "tang-026",
@@ -649,7 +723,10 @@
     "aiImageUrl": "",
     "historicalImageUrls": [],
     "calligraphyImageUrls": [],
-    "relatedPoemIds": []
+    "relatedPoemIds": [],
+    "imageType": "historical",
+    "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/3/3a/Wang_Ximeng._A_Thousand_Li_of_Rivers_and_Mountains._%28Complete%2C_51%2C3x1191%2C5_cm%29._1113._Palace_museum%2C_Beijing.jpg/2560px-Wang_Ximeng._A_Thousand_Li_of_Rivers_and_Mountains._%28Complete%2C_51%2C3x1191%2C5_cm%29._1113._Palace_museum%2C_Beijing.jpg",
+    "historicalSource": "故宫博物院/Wikimedia Commons (Public Domain)"
   },
   {
     "id": "tang-030",
@@ -681,7 +758,9 @@
     "aiImageUrl": "",
     "historicalPaintings": [],
     "calligraphyUrls": [],
-    "quizIds": []
+    "quizIds": [],
+    "imageUrl": "https://cdn.hailuoai.com/mcp/image_tool/output/473932182464974854/372569239945651/1775573795_d7e74c95.png",
+    "imageType": "ai"
   },
   {
     "id": "tang-031",
@@ -713,7 +792,9 @@
     "aiImageUrl": "",
     "historicalPaintings": [],
     "calligraphyUrls": [],
-    "quizIds": []
+    "quizIds": [],
+    "imageUrl": "https://cdn.hailuoai.com/mcp/image_tool/output/473932182464974854/372569239945651/1775573876_eaa45a43.png",
+    "imageType": "ai"
   },
   {
     "id": "tang-032",
@@ -745,7 +826,9 @@
     "aiImageUrl": "",
     "historicalPaintings": [],
     "calligraphyUrls": [],
-    "quizIds": []
+    "quizIds": [],
+    "imageUrl": "https://cdn.hailuoai.com/mcp/image_tool/output/473932182464974854/372569239945651/1775574019_871610a4.png",
+    "imageType": "ai"
   },
   {
     "id": "tang-033",
@@ -777,7 +860,9 @@
     "aiImageUrl": "",
     "historicalPaintings": [],
     "calligraphyUrls": [],
-    "quizIds": []
+    "quizIds": [],
+    "imageUrl": "https://cdn.hailuoai.com/mcp/image_tool/output/473932182464974854/372569239945651/1775574142_eb0e6a1e.png",
+    "imageType": "ai"
   },
   {
     "id": "tang-034",
@@ -809,7 +894,9 @@
     "aiImageUrl": "",
     "historicalPaintings": [],
     "calligraphyUrls": [],
-    "quizIds": []
+    "quizIds": [],
+    "imageUrl": "https://cdn.hailuoai.com/mcp/image_tool/output/473932182464974854/372569239945651/1775574184_42d25a65.png",
+    "imageType": "ai"
   },
   {
     "id": "tang-035",
@@ -841,7 +928,9 @@
     "aiImageUrl": "",
     "historicalPaintings": [],
     "calligraphyUrls": [],
-    "quizIds": []
+    "quizIds": [],
+    "imageUrl": "https://cdn.hailuoai.com/mcp/image_tool/output/473932182464974854/372569239945651/1775574248_69c55f44.png",
+    "imageType": "ai"
   },
   {
     "id": "tang-036",
@@ -873,7 +962,9 @@
     "aiImageUrl": "",
     "historicalPaintings": [],
     "calligraphyUrls": [],
-    "quizIds": []
+    "quizIds": [],
+    "imageUrl": "https://cdn.hailuoai.com/mcp/image_tool/output/473932182464974854/372569239945651/1775574348_f9234f52.png",
+    "imageType": "ai"
   },
   {
     "id": "tang-037",
@@ -905,7 +996,9 @@
     "aiImageUrl": "",
     "historicalPaintings": [],
     "calligraphyUrls": [],
-    "quizIds": []
+    "quizIds": [],
+    "imageUrl": "https://cdn.hailuoai.com/mcp/image_tool/output/473932182464974854/372569239945651/1775574422_b56a19bb.png",
+    "imageType": "ai"
   },
   {
     "id": "tang-038",
@@ -937,7 +1030,9 @@
     "aiImageUrl": "",
     "historicalPaintings": [],
     "calligraphyUrls": [],
-    "quizIds": []
+    "quizIds": [],
+    "imageUrl": "https://cdn.hailuoai.com/mcp/image_tool/output/473932182464974854/372569239945651/1775574468_7eb68ad5.png",
+    "imageType": "ai"
   },
   {
     "id": "tang-039",
@@ -969,7 +1064,9 @@
     "aiImageUrl": "",
     "historicalPaintings": [],
     "calligraphyUrls": [],
-    "quizIds": []
+    "quizIds": [],
+    "imageUrl": "https://cdn.hailuoai.com/mcp/image_tool/output/473932182464974854/372569239945651/1775574546_b9ee4015.png",
+    "imageType": "ai"
   },
   {
     "id": "tang-040",
@@ -1001,7 +1098,10 @@
     "aiImageUrl": "",
     "historicalPaintings": [],
     "calligraphyUrls": [],
-    "quizIds": []
+    "quizIds": [],
+    "imageType": "historical",
+    "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/3/3a/Wang_Ximeng._A_Thousand_Li_of_Rivers_and_Mountains._%28Complete%2C_51%2C3x1191%2C5_cm%29._1113._Palace_museum%2C_Beijing.jpg/2560px-Wang_Ximeng._A_Thousand_Li_of_Rivers_and_Mountains._%28Complete%2C_51%2C3x1191%2C5_cm%29._1113._Palace_museum%2C_Beijing.jpg",
+    "historicalSource": "故宫博物院/Wikimedia Commons (Public Domain)"
   },
   {
     "id": "tang-041",
@@ -1033,7 +1133,10 @@
     "aiImageUrl": "",
     "historicalPaintings": [],
     "calligraphyUrls": [],
-    "quizIds": []
+    "quizIds": [],
+    "imageType": "historical",
+    "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/9/9d/Alongtheriver_QingMing.jpg/2560px-Alongtheriver_QingMing.jpg",
+    "historicalSource": "故宫博物院/Wikimedia Commons (Public Domain)"
   },
   {
     "id": "tang-042",
@@ -1065,7 +1168,10 @@
     "aiImageUrl": "",
     "historicalPaintings": [],
     "calligraphyUrls": [],
-    "quizIds": []
+    "quizIds": [],
+    "imageType": "historical",
+    "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/3/3a/Wang_Ximeng._A_Thousand_Li_of_Rivers_and_Mountains._%28Complete%2C_51%2C3x1191%2C5_cm%29._1113._Palace_museum%2C_Beijing.jpg/2560px-Wang_Ximeng._A_Thousand_Li_of_Rivers_and_Mountains._%28Complete%2C_51%2C3x1191%2C5_cm%29._1113._Palace_museum%2C_Beijing.jpg",
+    "historicalSource": "故宫博物院/Wikimedia Commons (Public Domain)"
   },
   {
     "id": "tang-043",
@@ -1097,7 +1203,10 @@
     "aiImageUrl": "",
     "historicalPaintings": [],
     "calligraphyUrls": [],
-    "quizIds": []
+    "quizIds": [],
+    "imageType": "historical",
+    "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/3/3a/Wang_Ximeng._A_Thousand_Li_of_Rivers_and_Mountains._%28Complete%2C_51%2C3x1191%2C5_cm%29._1113._Palace_museum%2C_Beijing.jpg/2560px-Wang_Ximeng._A_Thousand_Li_of_Rivers_and_Mountains._%28Complete%2C_51%2C3x1191%2C5_cm%29._1113._Palace_museum%2C_Beijing.jpg",
+    "historicalSource": "故宫博物院/Wikimedia Commons (Public Domain)"
   },
   {
     "id": "song-ci-001",
@@ -1133,7 +1242,10 @@
     "aiImageUrl": "",
     "historicalPaintings": [],
     "calligraphyUrls": [],
-    "quizIds": []
+    "quizIds": [],
+    "imageType": "historical",
+    "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/1/1e/Gu_Hongzhong%27s_Night_Revels_1_edit.jpg/1280px-Gu_Hongzhong%27s_Night_Revels_1_edit.jpg",
+    "historicalSource": "故宫博物院/Wikimedia Commons (Public Domain)"
   },
   {
     "id": "song-ci-002",
@@ -1167,7 +1279,10 @@
     "aiImageUrl": "",
     "historicalPaintings": [],
     "calligraphyUrls": [],
-    "quizIds": []
+    "quizIds": [],
+    "imageType": "historical",
+    "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/3/3a/Wang_Ximeng._A_Thousand_Li_of_Rivers_and_Mountains._%28Complete%2C_51%2C3x1191%2C5_cm%29._1113._Palace_museum%2C_Beijing.jpg/2560px-Wang_Ximeng._A_Thousand_Li_of_Rivers_and_Mountains._%28Complete%2C_51%2C3x1191%2C5_cm%29._1113._Palace_museum%2C_Beijing.jpg",
+    "historicalSource": "故宫博物院/Wikimedia Commons (Public Domain)"
   },
   {
     "id": "song-ci-003",
@@ -1201,7 +1316,10 @@
     "aiImageUrl": "",
     "historicalPaintings": [],
     "calligraphyUrls": [],
-    "quizIds": []
+    "quizIds": [],
+    "imageType": "historical",
+    "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/3/3a/Wang_Ximeng._A_Thousand_Li_of_Rivers_and_Mountains._%28Complete%2C_51%2C3x1191%2C5_cm%29._1113._Palace_museum%2C_Beijing.jpg/2560px-Wang_Ximeng._A_Thousand_Li_of_Rivers_and_Mountains._%28Complete%2C_51%2C3x1191%2C5_cm%29._1113._Palace_museum%2C_Beijing.jpg",
+    "historicalSource": "故宫博物院/Wikimedia Commons (Public Domain)"
   },
   {
     "id": "song-ci-004",
@@ -1235,7 +1353,10 @@
     "aiImageUrl": "",
     "historicalPaintings": [],
     "calligraphyUrls": [],
-    "quizIds": []
+    "quizIds": [],
+    "imageType": "historical",
+    "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/1/1e/Gu_Hongzhong%27s_Night_Revels_1_edit.jpg/1280px-Gu_Hongzhong%27s_Night_Revels_1_edit.jpg",
+    "historicalSource": "故宫博物院/Wikimedia Commons (Public Domain)"
   },
   {
     "id": "song-ci-005",
@@ -1269,7 +1390,10 @@
     "aiImageUrl": "",
     "historicalPaintings": [],
     "calligraphyUrls": [],
-    "quizIds": []
+    "quizIds": [],
+    "imageType": "historical",
+    "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/1/1e/Gu_Hongzhong%27s_Night_Revels_1_edit.jpg/1280px-Gu_Hongzhong%27s_Night_Revels_1_edit.jpg",
+    "historicalSource": "故宫博物院/Wikimedia Commons (Public Domain)"
   },
   {
     "id": "song-ci-006",
@@ -1301,7 +1425,10 @@
     "aiImageUrl": "",
     "historicalPaintings": [],
     "calligraphyUrls": [],
-    "quizIds": []
+    "quizIds": [],
+    "imageType": "historical",
+    "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/1/1e/Gu_Hongzhong%27s_Night_Revels_1_edit.jpg/1280px-Gu_Hongzhong%27s_Night_Revels_1_edit.jpg",
+    "historicalSource": "故宫博物院/Wikimedia Commons (Public Domain)"
   },
   {
     "id": "song-ci-007",
@@ -1333,7 +1460,10 @@
     "aiImageUrl": "",
     "historicalPaintings": [],
     "calligraphyUrls": [],
-    "quizIds": []
+    "quizIds": [],
+    "imageType": "historical",
+    "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/3/3a/Wang_Ximeng._A_Thousand_Li_of_Rivers_and_Mountains._%28Complete%2C_51%2C3x1191%2C5_cm%29._1113._Palace_museum%2C_Beijing.jpg/2560px-Wang_Ximeng._A_Thousand_Li_of_Rivers_and_Mountains._%28Complete%2C_51%2C3x1191%2C5_cm%29._1113._Palace_museum%2C_Beijing.jpg",
+    "historicalSource": "故宫博物院/Wikimedia Commons (Public Domain)"
   },
   {
     "id": "song-ci-008",
@@ -1365,7 +1495,9 @@
     "aiImageUrl": "",
     "historicalPaintings": [],
     "calligraphyUrls": [],
-    "quizIds": []
+    "quizIds": [],
+    "imageType": "ai",
+    "imageUrl": "https://cdn.hailuoai.com/mcp/image_tool/output/473932182464974854/372569239945651/1775574830_68337d56.png"
   },
   {
     "id": "song-ci-009",
@@ -1397,7 +1529,10 @@
     "aiImageUrl": "",
     "historicalPaintings": [],
     "calligraphyUrls": [],
-    "quizIds": []
+    "quizIds": [],
+    "imageType": "historical",
+    "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/1/1e/Gu_Hongzhong%27s_Night_Revels_1_edit.jpg/1280px-Gu_Hongzhong%27s_Night_Revels_1_edit.jpg",
+    "historicalSource": "故宫博物院/Wikimedia Commons (Public Domain)"
   },
   {
     "id": "song-ci-010",
@@ -1429,7 +1564,10 @@
     "aiImageUrl": "",
     "historicalPaintings": [],
     "calligraphyUrls": [],
-    "quizIds": []
+    "quizIds": [],
+    "imageType": "historical",
+    "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/1/1e/Gu_Hongzhong%27s_Night_Revels_1_edit.jpg/1280px-Gu_Hongzhong%27s_Night_Revels_1_edit.jpg",
+    "historicalSource": "故宫博物院/Wikimedia Commons (Public Domain)"
   },
   {
     "id": "prose-001",
@@ -1461,7 +1599,10 @@
     "aiImageUrl": "",
     "historicalPaintings": [],
     "calligraphyUrls": [],
-    "quizIds": []
+    "quizIds": [],
+    "imageType": "historical",
+    "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/3/3a/Wang_Ximeng._A_Thousand_Li_of_Rivers_and_Mountains._%28Complete%2C_51%2C3x1191%2C5_cm%29._1113._Palace_museum%2C_Beijing.jpg/2560px-Wang_Ximeng._A_Thousand_Li_of_Rivers_and_Mountains._%28Complete%2C_51%2C3x1191%2C5_cm%29._1113._Palace_museum%2C_Beijing.jpg",
+    "historicalSource": "故宫博物院/Wikimedia Commons (Public Domain)"
   },
   {
     "id": "prose-002",
@@ -1493,7 +1634,10 @@
     "aiImageUrl": "",
     "historicalPaintings": [],
     "calligraphyUrls": [],
-    "quizIds": []
+    "quizIds": [],
+    "imageType": "historical",
+    "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/1/1e/Gu_Hongzhong%27s_Night_Revels_1_edit.jpg/1280px-Gu_Hongzhong%27s_Night_Revels_1_edit.jpg",
+    "historicalSource": "故宫博物院/Wikimedia Commons (Public Domain)"
   },
   {
     "id": "prose-003",
@@ -1525,7 +1669,10 @@
     "aiImageUrl": "",
     "historicalPaintings": [],
     "calligraphyUrls": [],
-    "quizIds": []
+    "quizIds": [],
+    "imageType": "historical",
+    "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/1/1e/Gu_Hongzhong%27s_Night_Revels_1_edit.jpg/1280px-Gu_Hongzhong%27s_Night_Revels_1_edit.jpg",
+    "historicalSource": "故宫博物院/Wikimedia Commons (Public Domain)"
   },
   {
     "id": "prose-004",
@@ -1557,7 +1704,9 @@
     "aiImageUrl": "",
     "historicalPaintings": [],
     "calligraphyUrls": [],
-    "quizIds": []
+    "quizIds": [],
+    "imageType": "ai",
+    "imageUrl": "https://cdn.hailuoai.com/mcp/image_tool/output/473932182464974854/372569239945651/1775574939_a35b3a8a.png"
   },
   {
     "id": "prose-005",
@@ -1589,7 +1738,10 @@
     "aiImageUrl": "",
     "historicalPaintings": [],
     "calligraphyUrls": [],
-    "quizIds": []
+    "quizIds": [],
+    "imageType": "historical",
+    "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/1/1e/Gu_Hongzhong%27s_Night_Revels_1_edit.jpg/1280px-Gu_Hongzhong%27s_Night_Revels_1_edit.jpg",
+    "historicalSource": "故宫博物院/Wikimedia Commons (Public Domain)"
   },
   {
     "id": "prose-006",
@@ -1621,7 +1773,10 @@
     "aiImageUrl": "",
     "historicalPaintings": [],
     "calligraphyUrls": [],
-    "quizIds": []
+    "quizIds": [],
+    "imageType": "historical",
+    "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/3/3a/Wang_Ximeng._A_Thousand_Li_of_Rivers_and_Mountains._%28Complete%2C_51%2C3x1191%2C5_cm%29._1113._Palace_museum%2C_Beijing.jpg/2560px-Wang_Ximeng._A_Thousand_Li_of_Rivers_and_Mountains._%28Complete%2C_51%2C3x1191%2C5_cm%29._1113._Palace_museum%2C_Beijing.jpg",
+    "historicalSource": "故宫博物院/Wikimedia Commons (Public Domain)"
   },
   {
     "id": "prose-007",
@@ -1653,7 +1808,10 @@
     "aiImageUrl": "",
     "historicalPaintings": [],
     "calligraphyUrls": [],
-    "quizIds": []
+    "quizIds": [],
+    "imageType": "historical",
+    "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/3/3a/Wang_Ximeng._A_Thousand_Li_of_Rivers_and_Mountains._%28Complete%2C_51%2C3x1191%2C5_cm%29._1113._Palace_museum%2C_Beijing.jpg/2560px-Wang_Ximeng._A_Thousand_Li_of_Rivers_and_Mountains._%28Complete%2C_51%2C3x1191%2C5_cm%29._1113._Palace_museum%2C_Beijing.jpg",
+    "historicalSource": "故宫博物院/Wikimedia Commons (Public Domain)"
   },
   {
     "id": "prose-008",
@@ -1685,7 +1843,10 @@
     "aiImageUrl": "",
     "historicalPaintings": [],
     "calligraphyUrls": [],
-    "quizIds": []
+    "quizIds": [],
+    "imageType": "historical",
+    "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/1/1e/Gu_Hongzhong%27s_Night_Revels_1_edit.jpg/1280px-Gu_Hongzhong%27s_Night_Revels_1_edit.jpg",
+    "historicalSource": "故宫博物院/Wikimedia Commons (Public Domain)"
   },
   {
     "id": "prose-009",
@@ -1717,7 +1878,10 @@
     "aiImageUrl": "",
     "historicalPaintings": [],
     "calligraphyUrls": [],
-    "quizIds": []
+    "quizIds": [],
+    "imageType": "historical",
+    "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/1/1e/Gu_Hongzhong%27s_Night_Revels_1_edit.jpg/1280px-Gu_Hongzhong%27s_Night_Revels_1_edit.jpg",
+    "historicalSource": "故宫博物院/Wikimedia Commons (Public Domain)"
   },
   {
     "id": "prose-010",
@@ -1749,6 +1913,9 @@
     "aiImageUrl": "",
     "historicalPaintings": [],
     "calligraphyUrls": [],
-    "quizIds": []
+    "quizIds": [],
+    "imageType": "historical",
+    "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/3/3a/Wang_Ximeng._A_Thousand_Li_of_Rivers_and_Mountains._%28Complete%2C_51%2C3x1191%2C5_cm%29._1113._Palace_museum%2C_Beijing.jpg/2560px-Wang_Ximeng._A_Thousand_Li_of_Rivers_and_Mountains._%28Complete%2C_51%2C3x1191%2C5_cm%29._1113._Palace_museum%2C_Beijing.jpg",
+    "historicalSource": "故宫博物院/Wikimedia Commons (Public Domain)"
   }
 ]

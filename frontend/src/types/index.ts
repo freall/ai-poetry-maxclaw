@@ -15,6 +15,9 @@ export interface Poem {
 
   // 资源
   aiImageUrl?: string
+  imageUrl?: string       // 主要配图 URL（AI 或历史名画）
+  imageType?: 'ai' | 'historical' | 'calligraphy'
+  historicalSource?: string  // 如"故宫博物院 (Public Domain)"
   historicalImageUrls?: string[]
   calligraphyImageUrls?: string[]
 
